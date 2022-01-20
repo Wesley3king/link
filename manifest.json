@@ -1,0 +1,38 @@
+{
+    "descrition": "este é um pwa do site.",
+    "name": ".LINK mangás",
+    "short_name": ".LINK",
+    "orientation": "portrait",
+    "dir": "ltr",
+    "scope": "/",
+    "theme_color": "#000000",
+    "background_color": "#000000",
+    "start_url": ".",
+    "display": "fullscreen",
+    "categories": [],
+    "screenshots": [],
+    "icons": [
+        {
+            "src": "./512x512-icon.png",
+            "type": "image/png",
+            "sizes": "512x512"
+        },
+        {
+            "src": "./maskable_icon.png",
+            "type": "image/png",
+            "sizes": "512x512",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "./livro-azul.ico",
+            "type": "image/x-icon",
+            "sizes": "256x256"
+          },
+        {
+            "src": "./192x192-icon.png",
+            "type": "image/png",
+            "sizes": "192x192"
+        }
+    ],
+    "shortcuts": []
+}
