@@ -1314,7 +1314,7 @@ function touchend(evt) {
    }
    party.desv(tip0, rdrty0, rdrSc0, vls20);
  }
- //controle do scroll to
+ //controle do scroll
  
  function scrollControl(typ=0,nS=0) {
    let vl;
