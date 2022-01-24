@@ -1075,7 +1075,7 @@ function headandheart() {
  };
  //testando o main menu
    
-   var selct = [['Favorites','Anime list','Class','Search','Downloads','Coming soon','install','Settings','Home','go out'],['soon','soon','searclass()','search()','soon','soon','insll()','soon','redirect(10)','redirect(12)'],['favorite.png','playmenu.png','classmenu.png','whitesearch.png','download.png','moon.png','instal.png',`tools.png`,'homeimg.png','power.png']];
+   var selct = [['Favorites','Anime list','Class','Search','Downloads','Coming soon','install','Settings','Home','go out'],['soon','soon','searclass()','search()','soon','soon','insll()','soon','redirect(10)','redirect(12)'],['favorite.png','playmenu.png','classmenu.png','lupa.png','download.png','lua.png','instal.png',`tools.png`,'homeimg.png','power.png']];
    var menul = null;
    function menu(zsh=0,vls=0, vRp, Tsc) {
      localizador = 3;
