@@ -969,12 +969,12 @@ function headandheart() {
    //seleção de classe
    let dvc = [];
    let prc = [];
-   for(let i in classname){
+   for(let i in NAMEofCLASS){
      dvc.push(window.document.createElement('section'));
      dvc[i].setAttribute('onclick',`ccmm(${i})`);
        dvc[i].setAttribute('class','intc');
      prc.push(window.document.createElement('p'));
-     dvc[i].appendChild(window.document.createTextNode(classname[i]));
+     dvc[i].appendChild(window.document.createTextNode(NAMEofCLASS[i]));
      local.appendChild(dvc[i]);
    }
    let rod = window.document.createElement('footer');
@@ -1029,7 +1029,7 @@ function headandheart() {
    let nomedac = window.document.createElement('p');
    nomedad.setAttribute('class','inazuma');
    nomedad.setAttribute('id','nomes');
-   nomedac.innerHTML = `classe: ${classname[sld]}`;
+   nomedac.innerHTML = `classe: ${NAMEofCLASS[sld]}`;
    
    vouvd.appendChild(vouv);
    local.appendChild(vouvd);
@@ -1043,8 +1043,8 @@ function headandheart() {
    let exts = window.document.createElement('div');
        exts.setAttribute('class','linec');
        let spy = 0;
-   for(let i in allclass){
-     if(allclass[i].indexOf(sld) !== -1){
+   for(let i in MATRIZclass){
+     if(MATRIZclass[i].indexOf(sld) !== -1){
        let resultd = window.document.createElement('div');
        resultd.setAttribute('class','linems');
        resultd.setAttribute('onclick',`subpage(${i}, 0, 3, ${++spy}, 5)`);
