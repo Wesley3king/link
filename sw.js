@@ -1,7 +1,6 @@
 const CacheName = 'v4';
 const resourcesToPrecache = [
-  '/',
-  './index.html'
+  '/'
 ];
 /*,
   './index.html',
