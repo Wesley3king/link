@@ -121,7 +121,7 @@ function home1(){
   mainblock[0].appendChild(h3tit);
   mainblock[0].appendChild(hr1);
   
-  var readingselected = [32,8,34,35,36,41,3];
+  var readingselected = [32,8,34,35,36,41,55,3];
   var readingh = window.document.createElement('h3');
   var readingd = [];
   var readingp = [];
