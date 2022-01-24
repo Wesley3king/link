@@ -1224,6 +1224,10 @@ function touchend(evt) {
       listp = [];
       mainblock = [];
       category = [];
+      menul = null;
+      localizador = 4;
+      menulc.innerHTML = '';
+      cabecalho.innerHTML = '';
       home1();
       markank = 0;
       //retorna ao home do searclas
