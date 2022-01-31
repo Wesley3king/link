@@ -121,7 +121,7 @@ function home1(){
   mainblock[0].appendChild(h3tit);
   mainblock[0].appendChild(hr1);
   
-  var readingselected = [32,8,34,35,36,41,55,3];
+  var readingselected = [32,33,34,35,36,41,47,3];
   var readingh = window.document.createElement('h3');
   var readingd = [];
   var readingp = [];
@@ -195,7 +195,7 @@ function home1(){
     classi[i].setAttribute('alt','classes');
     classp.push(window.document.createElement('p'));
     if(marcation === 0 && i === 0 && markank != 1 && markank != 3){
-      classi[i].setAttribute('src','./img-conf/net.png');
+      classi[i].setAttribute('src','./img-conf/red-clock.png');
       classp[i].innerHTML = 'my file';
       classd[i].setAttribute('onclick','class1()');
     }else if(marcation === 0 && i === 1 && markank != 1 && markank != 3){
@@ -203,8 +203,8 @@ function home1(){
       classp[i].innerHTML = 'specials';
         classd[i].setAttribute('onclick','class2()');
     }else if(marcation === 0 && i === 2 && markank != 1 && markank != 3){
-      classi[i].setAttribute('src','./img-conf/nuvem.png');
-      classp[i].innerHTML = 'animated';
+      classi[i].setAttribute('src','./img-conf/lightgreen-terminal.png');
+      classp[i].innerHTML = 'finalized';
         classd[i].setAttribute('onclick','class3()');
     }else if(marcation === 1 || markank === 1){
       classd[0].setAttribute('onclick','eliminar()');
@@ -354,7 +354,7 @@ function headandheart() {
     classd[2].setAttribute('class','ordem');
     marca2.setAttribute('onclick','notas()');
     classdiv.setAttribute('class','linec');
-    var oneclass = [3,31,33,38,40,41];
+    var oneclass = [38,40];
     var oned = [];
     var onei = [];
     var onep = [];
@@ -445,7 +445,7 @@ function headandheart() {
     classd[1].setAttribute('onclick','class2()');
     classd[1].setAttribute('class','ordem');
     marca2.setAttribute('onclick','notas()');
-   var numclass = [0, 1, 5, 7, 27, 28, 29, 30, 42];
+   var numclass = [31,55,8];
    var animd = [];
    var animi = [];
    var animp = [];
@@ -631,21 +631,6 @@ function headandheart() {
  let par = [];
  let imgg = [];
    allask.appendChild(showarea);
- }
- 
- //remove o search
- function nosearch(){
-     local.innerText = ''
-     allask.innerText = ''
-     alignsearch = null
-     window.scrollTo(0, 0)
-     allnum++
-  listd = []
-  listi = []
-  listp = []
-  mainblock = []
-  home1()
-  markank = 0
  }
  //funcao cabecalho do subpage
  function subhead(ls=0,tpp=0,wSv=0) {
