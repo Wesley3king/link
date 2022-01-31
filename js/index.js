@@ -867,7 +867,7 @@ function headandheart() {
      let spp = window.document.createElement('span');
      let parr = window.document.createElement('p');
      spp.setAttribute('class','srate');
-     spp.setAttribute('onclick',`ccmm(allclass[${vv}][${i}], ${vv}, 000,${vv})`);
+     spp.setAttribute('onclick',`ccmm(MATRIZclass[${vv}][${i}], ${vv}, 000,${vv})`);
      parr.setAttribute('class','sratetxt');
      parr.appendChild(window.document.createTextNode(NAMEofCLASS[MATRIZclass[vv][i]]));
      let wdt;
