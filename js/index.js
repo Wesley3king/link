@@ -121,7 +121,7 @@ function home1(){
   mainblock[0].appendChild(h3tit);
   mainblock[0].appendChild(hr1);
   
-  var readingselected = [32,33,34,35,36,41,47,3];
+  var readingselected = [32,33,59,34,35,36,41,47,3];
   var readingh = window.document.createElement('h3');
   var readingd = [];
   var readingp = [];
@@ -740,7 +740,7 @@ function headandheart() {
  fontlink.setAttribute('class','nound');
  let div1 = window.document.createElement('div');
  
- var img5 = './capas/' + allvar[3][x];
+ let img5 = './capas/' + allvar[3][x];
  lugarposter.style.backgroundImage=`url(${img5})`;
  lugarposter.style.backgroundSize="100% 100%";
  lugarposter.setAttribute('class','imgtam');
@@ -756,16 +756,16 @@ function headandheart() {
  fontlink.appendChild(fontspan);
  fontp.appendChild(fontlink);
  // ancoragem dos sites
- var golink = window.document.createElement('a');
+ let golink = window.document.createElement('a');
  golink.setAttribute('href',allvar[4][x]);
  golink.setAttribute('target','_blank');
  golink.setAttribute('rel','nofollow');
  golink.setAttribute('class','nound col');
- var gop = window.document.createElement('p');
+ let gop = window.document.createElement('p');
 
- var gospan = window.document.createElement('span');
- var godiv = window.document.createElement('div');
- var tagimg = window.document.createElement('img');
+ let gospan = window.document.createElement('span');
+ let godiv = window.document.createElement('div');
+ let tagimg = window.document.createElement('img');
  tagimg.setAttribute('src','./img-conf/literature.png');
   gop.setAttribute('class','titulo2');
  gop.setAttribute('id','ler');
@@ -776,7 +776,7 @@ function headandheart() {
  godiv.setAttribute('id','three');
  
  gop.appendChild(window.document.createTextNode(' ler agora!'));
- 
+
  godiv.appendChild(tagimg);
  godiv.appendChild(gop);
  golink.appendChild(godiv);
@@ -787,8 +787,11 @@ function headandheart() {
  
  namem.style.marginTop="2px";
  namem.style.marginBottom="30px";
- local.appendChild(namem);
- local.appendChild(golink);
+ let alinha_width = window.document.createElement('div');
+ alinha_width.setAttribute('class','sub_align');
+ alinha_width.appendChild(namem);
+ alinha_width.appendChild(golink);
+ local.appendChild(alinha_width);
  fontp.setAttribute('class','fontali');
  local.appendChild(fontp);
   // funcao da sinopse

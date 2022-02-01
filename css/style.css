@@ -300,7 +300,7 @@ margin-top: 10px;
         margin: auto;
       }
       .inazumaeleven{
-        width: 230px;
+        width: 65%;
         background-color: transparent;
         color: white;
         border: 0px;
@@ -311,7 +311,7 @@ margin-top: 10px;
       }
       .inazumaeleven:focus{
         transform: rotateY(360deg);
-        width: 255px;
+        width: 70%;
         border-bottom-color: #00f9f4;
         
       }
@@ -705,6 +705,9 @@ margin-top: 10px;
      #read{
        margin-top: 20px;
      }
+     .onekiss{
+       height: auto;
+     }
 @keyframes trocar1 {
   0% {
     opacity: 1;
@@ -724,6 +727,24 @@ margin-top: 10px;
 .linems{
   height:250px;
 }
+#neck{
+  width: 50%;
+  height:330px;
+  border:3px solid rgb(244,50,255);
+  border-bottom-color: gray;
+  text-align: center;
+  margin-left: 3px;
+  margin-top: 0px;
+}
+.fontali{
+  margin-top: 180px;
+}
+.stars{
+  padding-top: 0px;
+}
+.sub_align{
+  width: 45%;
+  display:inline-block;
+}
 
-
-  }
+}
