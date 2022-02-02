@@ -99,6 +99,12 @@ var classmaindiv = window.document.createElement('section');
    }
  }
     var timer = null;
+
+ for (let i in allvar[2]) {
+   console.log(`${allvar[0][i]} // ${allvar[1][i]} // ${allvar[2][i]} // ${allvar[3][i]} // ${allvar[4][i]}`);
+   console.log(allvar[7][i])
+ }
+
 function home1(){
   lugar.style.background="#1c1c1c";
   localizador = 1;
