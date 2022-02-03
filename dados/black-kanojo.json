@@ -1,10 +1,10 @@
 {
-    "short-name": "black kanojo",
+    "shortNAME": "black kanojo",
     "name": "black kanojo",
-    "middle-name": "black kanojo",
+    "middleNAME": "black kanojo",
     "img": "blackkanojo.jpg",
     "link": "https://leitor.net/manga/black-kanojo/4221",
-    "prov-name": "https://leitor.net",
+    "provLINK": "https://leitor.net",
     "prov": "leitor.net",
     "sinopse": "Estou prestes a ser morto, mas me apaixonei pela primeira vez. Exatamente pela garota que quer me matar…"
 }

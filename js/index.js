@@ -27,7 +27,7 @@ function import_json (solicitar) {
       console.log('Ocorreu um erro' + err);
     } else {
       console.log(data);
-      dados.push(data.short-name)
+      dados.push(data.shortNAME)
       dados.push()
       dados.push()
       dados.push()

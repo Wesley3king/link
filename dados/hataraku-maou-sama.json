@@ -1,10 +1,10 @@
 {
-    "short-name": "hataraku",
+    "shortNAME": "hataraku",
     "name": "hataraku maou-sama!",
-    "middle-name": "hataraku maou-sama!",
+    "middleNAME": "hataraku maou-sama!",
     "img": "hant.jpg",
     "link": "https://leitor.net/manga/hataraku-maou-sama/1106",
-    "prov-link": "https://leitor.net",
+    "provLINK": "https://leitor.net",
     "prov": "leitor.net",
     "sinopse": "Um demônio quase conseguiu conquistar o mundo, porém foi derrotado por um herói e jogado em Tókyo. Como não tem habilidades especiais nesse novo mundo, sua aventura para sobreviver começa."
 }

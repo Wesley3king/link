@@ -1,10 +1,10 @@
 {
-    "short-name": "the beginning",
+    "shortNAME": "the beginning",
     "name": "the beginning after the end",
-    "middle-name": "the beginning",
+    "middleNAME": "the beginning",
     "img": "thebenning.jpg",
     "link": "https://leitor.net/manga/the-beginning-after-the-end/7403",
-    "prov-link": "https://leitor.net",
+    "provLINK": "https://leitor.net",
     "prov": "leitor.net",
     "sinopse": "Rei Grey conquistou força, riquezas e prestígio sem iguais em um mundo governado pela habilidade marcial. Entretanto, a solidão acompanha de perto aqueles de grande poder. Por detrás da máscara de um glorioso e poderoso rei, reside a casca vazia de um homem destituído de propósito e vontade. Renascido em um novo mundo repleto de magia e monstros, o Rei Grey terá a chance de refazer sua vida. Corrigir os erros do passado não será seu único desafio, pois um perigo oculto cresce a cada instante, ameaçando destruir tudo que ele trabalhou para criar, o fazendo questionar a verdadeira razão de ter recebido uma nova vida…"
 }

@@ -1,10 +1,10 @@
 {
-    "short-name": "tokyo ghoul",
+    "shortNAME": "tokyo ghoul",
     "name": "tokyo ghoul",
-    "middle-name": "tokyo ghoul",
+    "middleNAME": "tokyo ghoul",
     "img": "tokyoghoul.jpg",
     "link": "https://leitor.net/manga/tokyo-ghoul/1171",
-    "prov-link": "https://leitor.net",
+    "provLINK": "https://leitor.net",
     "prov": "leitor.net",
     "sinopse": "Pense numa história em que você é o protagonista. Provavelmente seria uma tragédia, não? Pois essa é a história de Kaneki… Estranhos assassinatos estão acontecendo em Tokyo. Devido a evidência líquida na cena, a polícia concluiu que os ataques são resultados de um “comedor” de um tipo ghoul. Kaneki é um jovem de 18 anos cursando a faculdade, apaixonado por romances japoneses, ele e seu amigo Hide, criam a teoria de que os ghouls estão imitando os humanos, por isso nunca foram vistos. Mau eles sabem que essa teoria pode ser verdade."
 }

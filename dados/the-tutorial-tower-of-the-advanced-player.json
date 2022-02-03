@@ -1,10 +1,10 @@
 {
-    "short-name": "the tutorial",
+    "shortNAME": "the tutorial",
     "name": "the tutorial tower of the advanced player",
-    "middle-name": "the tutorial",
+    "middleNAME": "the tutorial",
     "img": "thetutorial.jpg",
     "link": "https://leitor.net/manga/the-tutorial-tower-of-the-advanced-player/9733",
-    "prov-link": "https://leitor.net",
+    "provLINK": "https://leitor.net",
     "prov": "leitor.net",
     "sinopse": "Um caçador está preso na Torre do Tutorial já fazem 12 anos! Dizem que é devido a algum tipo de maldição. Ele tem que concluí-la várias e várias vezes, sem poder sair de lá. O que o 'pobre coitado' terá que fazer para sair desse ciclo sem fim?"
 }
