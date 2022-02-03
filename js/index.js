@@ -27,11 +27,14 @@ function import_json (solicitar) {
       console.log('Ocorreu um erro' + err);
     } else {
       console.log(data);
-      dados.push(data.shortNAME)
-      dados.push()
-      dados.push()
-      dados.push()
-      dados.push()
+      dados.push(data.shortNAME);
+      dados.push(data.name);
+      dados.push(data.middleNAME);
+      dados.push(data.img);
+      dados.push(data.link);
+      dados.push(data.provLINK);
+      dados.push(data.prov);
+      dados.push(data.sinopse);
     }
   });
 } 
