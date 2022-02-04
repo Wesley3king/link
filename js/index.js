@@ -19,25 +19,29 @@ var getJSON = function(url, callback) {
   xhr.send();
 };
 
-var dados = [];
-function import_json (solicitar) {
-
-  getJSON(`./dados/${address[solicitar]}.json`, function(err, data) {
+var allvar = [[],[],[],[],[],[],[],[]];
+function import_json () {
+  //dados = [];
+  for (let i in address){
+  getJSON(`./dados/${address[i]}.json`, function(err, data) {
     if (err !== null) {
       console.log('Ocorreu um erro' + err);
     } else {
-      console.log(data);
-      dados.push(data.shortNAME);
-      dados.push(data.name);
-      dados.push(data.middleNAME);
-      dados.push(data.img);
-      dados.push(data.link);
-      dados.push(data.provLINK);
-      dados.push(data.prov);
-      dados.push(data.sinopse);
+      allvar[0].push(data.shortNAME);
+      allvar[1].push(data.name);
+      allvar[2].push(data.middleNAME);
+      allvar[3].push(data.img);
+      allvar[4].push(data.link);
+      allvar[5].push(data.provLINK);
+      allvar[6].push(data.prov);
+      allvar[7].push(data.sinopse);
+      //console.log(data);
     }
   });
-} 
+}
+};
+import_json();
+console.log(allvar[2]);
   var prov;
   var provname;
   function prover(k){
@@ -119,6 +123,8 @@ var classmaindiv = window.document.createElement('section');
      maindv.style.animation=`trocar2 2s linear 1`;
      let slc = mtd.rnd();
      mainp.innerText = '';
+     /*let info = import_json(slc);
+     console.log(`mud = ${dados[1]}`);*/
      mainp.innerText = `${allvar[2][slc]}`;
      mainp.setAttribute('class','tituloresponsivo');
      let mainmangaf = caminho2 + allvar[3][slc];
@@ -137,10 +143,10 @@ var classmaindiv = window.document.createElement('section');
  }
     var timer = null;
 
- for (let i in allvar[2]) {
+ /*for (let i in allvar[2]) {
    console.log(`${allvar[0][i]} // ${allvar[1][i]} // ${allvar[2][i]} // ${allvar[3][i]} // ${allvar[4][i]}`);
    console.log(allvar[7][i])
- }
+ }*/
 
 function home1(){
   lugar.style.background="#1c1c1c";
@@ -300,8 +306,14 @@ function home1(){
   local.appendChild(rr);
   alignsearch = null;
 };
+var init = setTimeout(()=> {
+  if (allvar[0][1] !== undefined){
+    home1();
+  }else {
+    console.log('failed')
+  }
+}, 2000)
 
-home1();
 //funcao cabecalho
 function headandheart() {
   cabecalho.innerHTML = '';
