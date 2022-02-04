@@ -40,7 +40,7 @@ function import_json () {
 }
 };
 import_json();
-console.log(allvar[2]);
+//console.log(allvar);
   var prov;
   var provname;
   function prover(k){
