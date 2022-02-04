@@ -25,7 +25,7 @@ function import_json () {
   for (let i in address){
   getJSON(`./dados/${address[i]}.json`, function(err, data) {
     if (err !== null) {
-      console.log('Ocorreu um erro' + err);
+      console.log('erro ni importador' + err);
     } else {
       allvar[0].push(data.shortNAME);
       allvar[1].push(data.name);
@@ -35,7 +35,6 @@ function import_json () {
       allvar[5].push(data.provLINK);
       allvar[6].push(data.prov);
       allvar[7].push(data.sinopse);
-      //console.log(data);
     }
   });
 }
@@ -312,7 +311,7 @@ var init = setTimeout(()=> {
   }else {
     console.log('failed')
   }
-}, 2000)
+}, 1000)
 
 //funcao cabecalho
 function headandheart() {
