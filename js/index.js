@@ -58,7 +58,6 @@ function organizar () {
     sub_data.push(allvar[6][s]);
     sub_data.push(allvar[7][s]);
 
-    console.log(`i === ${i}  / s === ${s} type === ${allvar[8][i]}`);
     dados.push(sub_data)
   }
 }
@@ -641,8 +640,9 @@ function headandheart() {
    num2 = 2;
  showarea.appendChild(window.document.createElement('hr'));
   allask.appendChild(showarea);
-   for(var e in dados.length){
+   for(let e = 0; e <dados.length; e++){
      var valor = String(window.document.querySelector('#sank').value.toLowerCase());
+     console.log(`valor === ${ valor} / dados === ${dados[e][1]}`)
      if(dados[e][1].indexOf(valor) != -1){
        numlist.push(e);
        clone.push(e);
@@ -773,7 +773,6 @@ function headandheart() {
   window.scrollTo(0, 0);
   //fim do menu, inicio da mostra
   
-  prover(x);
  let fontlink = window.document.createElement('a');
  let fontspan = window.document.createElement('span');
  let fontp = window.document.createElement('p');
