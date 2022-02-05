@@ -20,6 +20,7 @@ var getJSON = function(url, callback) {
 };
 
 var allvar = [[],[],[],[],[],[],[],[],[]];
+var dados = [];
 function import_json () {
   //dados = [];
   for (let i in address){
@@ -38,24 +39,33 @@ function import_json () {
       allvar[8].push(data.cod)
     }
   });
-}
+ }
 };
 import_json();
-console.log(allvar[8]);
-  var prov;
-  var provname;
-  function prover(k){
-    if(k == 31){
-      prov = 3;
-      provname = 3;
-    }else if(k === 58){
-      prov = 1;
-      provname = 1;
-    }else{
-      prov = 0;
-      provname = 0;
-    }
+
+function organizar () {
+  for (let i in allvar[8]) {
+    //console.log(i)
+    let n = Number(i);
+    let s = allvar[8].indexOf(n);
+    let sub_data = [];
+    sub_data.push(allvar[0][s]);
+    sub_data.push(allvar[1][s]);
+    sub_data.push(allvar[2][s]);
+    sub_data.push(allvar[3][s]);
+    sub_data.push(allvar[4][s]);
+    sub_data.push(allvar[5][s]);
+    sub_data.push(allvar[6][s]);
+    sub_data.push(allvar[7][s]);
+
+    console.log(`i === ${i}  / s === ${s} type === ${allvar[8][i]}`);
+    dados.push(sub_data)
   }
+}
+console.log(dados);
+  /*var prov;
+  var provname;*/
+  
   var di2 = [];
    var img2 = [];
    var caminho2 = './capas/'
@@ -109,13 +119,7 @@ var classmaindiv = window.document.createElement('section');
  var mtd = {
    rnd: function () {
      let vlr;
-     do{
-     vlr = (Math.round(Math.random()*10)) * (Math.round(Math.random()*10));
-     console.log('vlr value = ' + vlr);
-     if(vlr === 63){
-       vlr = 0;
-     }
-      }while(vlr > 63);
+     vlr = (Math.round(Math.random()*dados.length));
       console.log('vlr FINAL value = ' + vlr);
      return vlr;
    },
@@ -123,11 +127,9 @@ var classmaindiv = window.document.createElement('section');
      maindv.style.animation=`trocar2 2s linear 1`;
      let slc = mtd.rnd();
      mainp.innerText = '';
-     /*let info = import_json(slc);
-     console.log(`mud = ${dados[1]}`);*/
-     mainp.innerText = `${allvar[2][slc]}`;
+     mainp.innerText = `${dados[slc][2]}`;
      mainp.setAttribute('class','tituloresponsivo');
-     let mainmangaf = caminho2 + allvar[3][slc];
+     let mainmangaf = caminho2 + dados[slc][3];
      maindi.style.backgroundImage=`url(./${mainmangaf})`;
      maindi.setAttribute('class','imgr');
      maindv.setAttribute('id','principal');
@@ -179,15 +181,13 @@ function home1(){
     readingd.push(window.document.createElement('div'));
     readingd[i].setAttribute('class','linem');
     readingi.push(window.document.createElement('div'));
-    let mainmangaf = caminho2 + allvar[3][readingselected[i]];
+    let mainmangaf = caminho2 + dados[readingselected[i]][3];
     readingi[i].style.backgroundImage=`url(${mainmangaf})`;
     readingi[i].setAttribute('class','imgclass');
     readingp.push(window.document.createElement('p'));
     readingp[i].setAttribute('class','csstxt');
-    readingp[i].appendChild(window.document.createTextNode(allvar[0][readingselected[i]]));
-    console.log(allvar[0]);
+    readingp[i].appendChild(window.document.createTextNode(dados[readingselected[i]][0]));
 
-    
     readingd[i].appendChild(readingi[i]);
     readingd[i].appendChild(readingp[i]);
     readingd[i].setAttribute('onclick',`subpage(${readingselected[i]}, 0, 1, 2.4, 1)`);
@@ -205,12 +205,12 @@ function home1(){
     listd.push(window.document.createElement('div'));
     listd[i].setAttribute('class','linem');
     listi.push(window.document.createElement('div'));
-    let mainmangaf = caminho2 + allvar[3][i];
+    let mainmangaf = caminho2 + dados[i][3];
     listi[i].style.backgroundImage=`url(./${mainmangaf})`;
     listi[i].setAttribute('class','imgclass');
     listp.push(window.document.createElement('p'));
     listp[i].setAttribute('class','csstxt');
-    listp[i].appendChild(window.document.createTextNode(allvar[0][i]));
+    listp[i].appendChild(window.document.createTextNode(dados[i][0]));
     listd[i].appendChild(listi[i]);
     listd[i].appendChild(listp[i]);
     listd[i].setAttribute('onclick',`subpage(${i}, 0, 1, 5.1, 1)`);
@@ -310,6 +310,7 @@ function home1(){
 };
 var init = setTimeout(()=> {
   if (allvar[0][1] !== undefined){
+    organizar();
     home1();
   }else {
     console.log('failed')
@@ -371,17 +372,17 @@ function headandheart() {
       alll_Active = 528;
       console.log('alll ativado!')
       listmore.innerText = '';
-    for(let i = 6; i < allvar[0].length;i++){
+    for(let i = 6; i < dados.length;i++){
     listd.push(window.document.createElement('div'));
     listd[i].setAttribute('class','linem');
     listi.push(window.document.createElement('div'));
-    let mainmangaf = caminho2 + allvar[3][i];
+    let mainmangaf = caminho2 + dados[i][3];
     listi[i].style.backgroundImage=`url(${mainmangaf})`;
     listi[i].setAttribute('class','imgclass');
     //listi[i].setAttribute('alt','capa do manga');
     listp.push(window.document.createElement('p'));
     listp[i].setAttribute('class','csstxt');
-    listp[i].appendChild(window.document.createTextNode(allvar[0][i]));
+    listp[i].appendChild(window.document.createTextNode(dados[i][0]));
     
     listd[i].appendChild(listi[i]);
     listd[i].appendChild(listp[i]);
@@ -420,11 +421,11 @@ function headandheart() {
       oned.push(window.document.createElement('div'));
       oned[i].setAttribute('class','linem');
       onei.push(window.document.createElement('div'));
-      let mainmangaf = caminho2 + allvar[3][oneclass[i]];
+      let mainmangaf = caminho2 + dados[oneclass[i]][3];
       onei[i].style.backgroundImage=`url(${mainmangaf})`;
       onei[i].setAttribute('class','imgclass');
       onep.push(window.document.createElement('p'));
-      onep[i].appendChild(window.document.createTextNode(allvar[0][oneclass[i]]));
+      onep[i].appendChild(window.document.createTextNode(dados[oneclass[i]][0]));
       onep[i].setAttribute('class','csstxt');
       
       oned[i].appendChild(onei[i]);
@@ -510,11 +511,11 @@ function headandheart() {
    animd.push(window.document.createElement('div'));
    animd[i].setAttribute('class','linem');
    animi.push(window.document.createElement('div'));
-   let mainmangaf = caminho2 + allvar[3][numclass[i]];
+   let mainmangaf = caminho2 + dados[numclass[i]][3];
    animi[i].style.backgroundImage=`url(${mainmangaf})`;
    animi[i].setAttribute('class','imgclass');
    animp.push(window.document.createElement('p'));
-   animp[i].appendChild(window.document.createTextNode(allvar[0][numclass[i]]));
+   animp[i].appendChild(window.document.createTextNode(dados[numclass[i]][0]));
    animp[i].setAttribute('class','csstxt');
    
    animd[i].appendChild(animi[i]);
@@ -640,13 +641,12 @@ function headandheart() {
    num2 = 2;
  showarea.appendChild(window.document.createElement('hr'));
   allask.appendChild(showarea);
-   for(var e in allvar[1]){
+   for(var e in dados.length){
      var valor = String(window.document.querySelector('#sank').value.toLowerCase());
-     console.log(e + allvar[1][e]);
-     if(allvar[1][e].indexOf(valor) != -1){
+     if(dados[e][1].indexOf(valor) != -1){
        numlist.push(e);
        clone.push(e);
-       listone.push(allvar[2][e]);
+       listone.push(dados[e][2]);
        verifi++;
      }
    }
@@ -663,12 +663,12 @@ function headandheart() {
      par.push(window.document.createElement('p'));
      par[gg].setAttribute('class','csstxt');
      imgg.push(window.document.createElement('div'));
-     res = caminho2 + allvar[3][numlist[gg]];
+     res = caminho2 + dados[numlist[gg]][3];
      imgg[gg].style.backgroundImage=`url(${res})`;
      imgg[gg].setAttribute('class','bigimg');
      
      divv[gg].appendChild(imgg[gg]);
-     par[gg].appendChild(window.document.createTextNode(allvar[2][numlist[gg]]));
+     par[gg].appendChild(window.document.createTextNode(dados[numlist[gg]][2]));
      divv[gg].setAttribute('onclick',`subpage(${numlist[gg]},0, 4, ${gg}, 4)`);
      divv[gg].appendChild(par[gg]);
      showarea.appendChild(divv[gg]);
@@ -712,7 +712,7 @@ function headandheart() {
    menuinti2.setAttribute('src','./img-conf/doble-arrow.png');
   menuinti2.setAttribute('alt','return');
   //redirecionamento/ voltar
-  console.log(ls + ' ###')
+  console.log(ls + ' ###');
   if(ls === 0){
     menuinti2.setAttribute('onclick',`redirect(11, ${tpp}, ${wSv})`);
   }else if(ls === 3){
@@ -783,21 +783,21 @@ function headandheart() {
  let tagmain = window.document.createElement('main');
  tagmain.setAttribute('id','neck');
  
- tagmain.style.background=`url(./capas/${allvar[3][x]})`;
+ tagmain.style.background=`url(./capas/${dados[x][3]})`;
  tagmain.style.backgroundSize="100%";
  tagmain.style.backgroundRepeat="no-repeat";
  tagmain.setAttribute('class','titulo mgtop2');
  let divdei = window.document.createElement('div');
  divdei.setAttribute('id','divimg');
  fontp.innerHTML = 'font: ';
- fontspan.appendChild(window.document.createTextNode(allvar[6][provname]));
+ fontspan.appendChild(window.document.createTextNode(dados[x][6]));
  fontlink.setAttribute('target','_blank');
  fontlink.setAttribute('rel','nofollow');
- fontlink.setAttribute('href',allvar[5][prov]);
+ fontlink.setAttribute('href',dados[x][5]);
  fontlink.setAttribute('class','nound');
  let div1 = window.document.createElement('div');
  
- let img5 = './capas/' + allvar[3][x];
+ let img5 = './capas/' + dados[x][3];
  lugarposter.style.backgroundImage=`url(${img5})`;
  lugarposter.style.backgroundSize="100% 100%";
  lugarposter.setAttribute('class','imgtam');
@@ -807,14 +807,13 @@ function headandheart() {
  div1.appendChild(lugarposter);
  divdei.appendChild(div1);
  tagmain.appendChild(divdei);
- //local.appendChild(mll);
  local.appendChild(tagmain);
  
  fontlink.appendChild(fontspan);
  fontp.appendChild(fontlink);
  // ancoragem dos sites
  let golink = window.document.createElement('a');
- golink.setAttribute('href',allvar[4][x]);
+ golink.setAttribute('href', dados[x][4]);
  golink.setAttribute('target','_blank');
  golink.setAttribute('rel','nofollow');
  golink.setAttribute('class','nound col');
@@ -839,7 +838,7 @@ function headandheart() {
  golink.appendChild(godiv);
  
  let namem = window.document.createElement('h2');
- namem.appendChild(window.document.createTextNode(allvar[1][x]));
+ namem.appendChild(window.document.createTextNode(dados[x][1]));
  namem.setAttribute('class','stars');
  
  namem.style.marginTop="2px";
@@ -857,7 +856,7 @@ function headandheart() {
  var sinos= window.document.createElement('section');
  bold.appendChild(window.document.createTextNode('sinopse: '));
  par.appendChild(bold);
- par.appendChild(window.document.createTextNode(allvar[7][x]));
+ par.appendChild(window.document.createTextNode(dados[x][7]));
  colortxt();
  sinos.appendChild(par);
  sinos.setAttribute('class','subsin');
@@ -958,7 +957,7 @@ function headandheart() {
    maincpx.setAttribute('id','embreve');
    maind = window.document.createElement('div');
    maind.setAttribute('class','Shownow');
-   let vacp = caminho2 + allvar[3][z];
+   let vacp = caminho2 + dados[z][3];
    maincapa.setAttribute('src', vacp);
    maincapa.setAttribute('alt','Poster');
    maincapa.setAttribute('class','Showhour');
@@ -1094,11 +1093,11 @@ function headandheart() {
        resultd.setAttribute('class','linems');
        resultd.setAttribute('onclick',`subpage(${i}, 0, 3, ${++spy}, 5)`);
        let resulti = window.document.createElement('div');
-       let worst = caminho2 + allvar[3][i];
+       let worst = caminho2 + dados[i][3];
        resulti.style.backgroundImage=`url(${worst})`
        resulti.setAttribute('class','bigimg');
        let resultp = window.document.createElement('p');
-       resultp.appendChild(window.document.createTextNode(allvar[2][i]));
+       resultp.appendChild(window.document.createTextNode(dados[i][2]));
        resultp.setAttribute('class','csstxt');
        
        resultd.appendChild(resulti);
