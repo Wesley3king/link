@@ -40,7 +40,6 @@ function import_json () {
 }
 };
 import_json();
-//console.log(allvar);
   var prov;
   var provname;
   function prover(k){
@@ -184,6 +183,8 @@ function home1(){
     readingp.push(window.document.createElement('p'));
     readingp[i].setAttribute('class','csstxt');
     readingp[i].appendChild(window.document.createTextNode(allvar[0][readingselected[i]]));
+    console.log(allvar[0]);
+
     
     readingd[i].appendChild(readingi[i]);
     readingd[i].appendChild(readingp[i]);
