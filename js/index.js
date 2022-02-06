@@ -176,6 +176,8 @@ function home1(){
   var readingd = [];
   var readingp = [];
   var readingi = [];
+  let read_over = window.document.createElement('div');
+  read_over.setAttribute('class', 'read_scroll')
   for(let i in readingselected){
     readingd.push(window.document.createElement('div'));
     readingd[i].setAttribute('class','linem');
@@ -190,9 +192,10 @@ function home1(){
     readingd[i].appendChild(readingi[i]);
     readingd[i].appendChild(readingp[i]);
     readingd[i].setAttribute('onclick',`subpage(${readingselected[i]}, 0, 1, 2.4, 1)`);
-    mainblock[0].appendChild(readingd[i]);
+    read_over.appendChild(readingd[i]);
     
   };
+  mainblock[0].appendChild(read_over);
   local.appendChild(mainblock[0]);
   //segunda div - my list
   mainblock[1].setAttribute('id','two');

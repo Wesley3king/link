@@ -214,6 +214,10 @@ margin-top: 10px;
         border-radius:3px;
         box-shadow: 3px 3px 2px black;
       }
+      /*.read_scroll{
+        height: 173px;
+        overflow-x: scroll;
+      }*/
       .mm{
         font-size: 20px;
         font-weight:bold;
