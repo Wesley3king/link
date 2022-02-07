@@ -1,6 +1,9 @@
 //      LINK PROJECT by @KING.
+const lugar = window.document.querySelector('#my_way');
+const local = window.document.querySelector('#pjct');
 const address = ['tsuki-ga-michibiku-isekai-douchuu','kimi-to-boku-no-saigo-no-senjou-aruiwa-sekai-ga-hajimaru-seisen','the-tutorial-tower-of-the-advanced-player','fukushuu-wo-koinegau-saikyou-yuusha-wa-yami-no-chikara-de-senmetsu-musou-suru','black-kanojo','black-clover','apocalyptic-super-system','hataraku-maou-sama','gods-reborn','imamade-ichido-mo-onnaatsukai-sareta-koto-ga-nai-onna-kishi-wo-onnaatsukai-suru-manga','is-there-an-empty-room','a-world-that-i-rule','kage-no-jitsuryokusha-ni-naritakute','koi-ka-mahou-ka-wakaranai','my-girlfriend-is-a-zombie-virus-girlfriend','my-yandere-girlfriend-wont-let-me-rest-in-peace','negai-o-kanaete-moraou-to-akuma-o-shoukan-shitakedo-kawaikattanode-kekkonshimashita-akuma-no-niidzuma','parallel-paradise','rakudai-kenja-no-gakuin-musou-nidome-no-tense-s-rank-cheat-majutsushi-boukenroku','reincarnated-as-an-aristocrat-with-an-appraisal-skill','tensei-kizoku-no-isekai-boukenroku-jichou-wo-shiranai-kamigami-no-shito','strongest-hired-son-in-law','son-in-law-above-them-all','tsumi-to-kai','the-way-to-protect-the-female-lead-s-older-brother','rise-of-the-demon-king','uragirareta-s-rank-boukensha-no-ore-wa-ai-suru-dorei-no-kanojora-to-tomo-ni-dorei-dake-no-harem-guild-wo-tsukuru','tantei-wa-mou-shindeiru','kanojo-mo-kanojo','chainsaw-man','mahouka-koukou-no-rettousei-nyuugaku-hen','i-swear-that-i-love-you','jungle-juice','houkago-no-goumon-shoujo','koibito-wo-netorare-yuusha-party-kara-tsuihou-sa-retakedo-ex-skill-kotei-dameeji-ni-mezamete-muteki-no-sonzai-ni-saa-fukushuu-o-hajimeyou','naze-boku-no-sekai-wo-daremo-oboeteinai-no-ka','my-wife-is-actually-the-emperor','a-pervert-s-daily-life-a-perverts-daily-life','solo-leveling','martial-peak','my-wife-is-a-demon-queen','the-beginning-after-the-end','kaifuku-jutsushi-yarinaoshi','building-owner','giselle-s-blood','i-the-strongest-demon-have-regained-my-youth','mushoku-tensei-isekai-ittara-honki-dasu','ouritsu-mahou-gakuen-no-saikasei-slum-agari-no-saikyou-mahoushi-kizoku-darake-no-gakuen-de-musou-suru','the-second-coming-of-gluttony','tokyo-ghoul','young-boss','wonderful-new-world','my-girlfriend-is-a-dragon','elf-who-likes-to-be-humiliated','i-m-really-not-the-demon-god-s-lackey','hari-dormitory','boarding-diary','prison-lab','two-households','tales-of-demons-and-gods','the-otome-game-s-bad-ending','seeking-the-flying-sword-path','maou-gun-saikyou-no-majutsushi-wa-ningen-datta'];
 
+var readingselected = [32,33,59,34,35,36,41,47,3];
 // impotador de json's
 var getJSON = function(url, callback) {
   var xhr = new XMLHttpRequest();
@@ -19,14 +22,56 @@ var getJSON = function(url, callback) {
   xhr.send();
 };
 
+  var carga = 0;
+  var control_animation;
+  var img_carga = 0;
+  var start_one = 0;
+  var div_load = window.document.createElement('div');
+  var div_loading = window.document.createElement('div');
+   //loading
+async function loading () {
+    lugar.style.background="#1c1c1c";
+    if (start_one === 0) {
+    div_load.setAttribute('class','load_d');
+    div_loading.setAttribute('class','loading_d');
+    let letters_load = window.document.createElement('p');
+    letters_load.innerText = 'carregando...';
+    letters_load.setAttribute('class','letras_carga')
+    
+
+    div_load.appendChild(div_loading);
+    local.appendChild(div_load);
+    local.appendChild(letters_load);
+    }
+    div_loading.style.width= `${carga}%`;
+    /*let imgElement = []
+    if(carga >= 50) {
+    for (let i in readingselected) {
+      imgElement[i] = window.document.createElement('img');
+      imgElement[i].setAttribute('src',`./capas/${dados[readingselected[i]][3]}`);
+    }
+    if(imgElement[i].complete && imgElement[i].naturalHeight !== 0) {
+      carga += 5;
+    }
+  }*/
+  console.log(start_one);
+  ++start_one;
+  //control_animation = requestAnimationFrame(loading);
+    if(carga >= 100) {
+      //cancelAnimationFrame(control_animation);
+      clearInterval(control_animation);
+      local.innerText = '';
+      home1();
+    }
+  }
+
 var allvar = [[],[],[],[],[],[],[],[],[]];
 var dados = [];
 function import_json () {
-  //dados = [];
   for (let i in address){
   getJSON(`./dados/${address[i]}.json`, function(err, data) {
     if (err !== null) {
-      console.log('erro ni importador' + err);
+      console.log('erro no importador' + err);
     } else {
       allvar[0].push(data.shortNAME);
       allvar[1].push(data.name);
@@ -39,13 +84,14 @@ function import_json () {
       allvar[8].push(data.cod)
     }
   });
+  carga += 1;
  }
 };
+control_animation= setInterval(loading, 200);
 import_json();
 
 function organizar () {
   for (let i in allvar[8]) {
-    //console.log(i)
     let n = Number(i);
     let s = allvar[8].indexOf(n);
     let sub_data = [];
@@ -59,6 +105,7 @@ function organizar () {
     sub_data.push(allvar[7][s]);
 
     dados.push(sub_data)
+    carga += 1;
   }
 }
 console.log(dados);
@@ -71,8 +118,7 @@ console.log(dados);
    var capa2 = [null]
    var at2 = [];
    var at2 = [];
-const lugar = window.document.querySelector('#my_way');
-const local = window.document.querySelector('#pjct');
+
 var hrs = window.document.createElement('hr');
 var hr1 = window.document.createElement('hr');
 var hr2 = window.document.createElement('hr');
@@ -118,7 +164,7 @@ var classmaindiv = window.document.createElement('section');
  var mtd = {
    rnd: function () {
      let vlr;
-     vlr = (Math.round(Math.random()*dados.length));
+     vlr = (Math.round(Math.random()*(dados.length - 1)));
       console.log('vlr FINAL value = ' + vlr);
      return vlr;
    },
@@ -166,7 +212,6 @@ function home1(){
   mainblock[0].appendChild(h3tit);
   mainblock[0].appendChild(hr1);
   
-  var readingselected = [32,33,59,34,35,36,41,47,3];
   var readingh = window.document.createElement('h3');
   var readingd = [];
   var readingp = [];
@@ -309,7 +354,6 @@ function home1(){
 var init = setTimeout(()=> {
   if (allvar[0][1] !== undefined){
     organizar();
-    home1();
   }else {
     console.log('failed')
   }
