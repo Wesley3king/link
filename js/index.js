@@ -6,9 +6,9 @@ var getJSON = function(url, callback) {
   var xhr = new XMLHttpRequest();
   xhr.open('GET', url, true);
   xhr.responseType = 'json';
-  xhr.onreadystatechange = function() {
+  xhr.onreadystatechange = function () {
     //var status = xhr.status;
-    if (xhr.status === 200) { 
+    if (xhr.status === 200) {
       //Callback caso de tudo certo
       callback(null, xhr.response);
     } else {
@@ -83,7 +83,7 @@ var mainblock = [];
   var listi = [];
   var listp = [];
  
-  var maisb = window.document.createElement('button');
+  //var maisb = window.document.createElement('button');
   var classd = [];
   var classzone = window.document.createElement('div');
   classzone.setAttribute('id','areaclass');
@@ -144,11 +144,6 @@ var classmaindiv = window.document.createElement('section');
  }
     var timer = null;
 
- /*for (let i in allvar[2]) {
-   console.log(`${allvar[0][i]} // ${allvar[1][i]} // ${allvar[2][i]} // ${allvar[3][i]} // ${allvar[4][i]}`);
-   console.log(allvar[7][i])
- }*/
-
 function home1(){
   lugar.style.background="#1c1c1c";
   localizador = 1;
@@ -198,12 +193,14 @@ function home1(){
   mainblock[0].appendChild(read_over);
   local.appendChild(mainblock[0]);
   //segunda div - my list
+  let lista_scroll = window.document.createElement('div');
+  lista_scroll.setAttribute('class','list_scroll');
   mainblock[1].setAttribute('id','two');
-  var listatit = window.document.createElement('h3');
+  let listatit = window.document.createElement('h3');
   listatit.appendChild(window.document.createTextNode('my list'));
   mainblock[1].appendChild(listatit);
   mainblock[1].appendChild(hrs);
-  for(let i = 0; i < 6;i++){
+  for(let i = 0; i < dados.length;i++){
     listd.push(window.document.createElement('div'));
     listd[i].setAttribute('class','linem');
     listi.push(window.document.createElement('div'));
@@ -216,20 +213,19 @@ function home1(){
     listd[i].appendChild(listi[i]);
     listd[i].appendChild(listp[i]);
     listd[i].setAttribute('onclick',`subpage(${i}, 0, 1, 5.1, 1)`);
-    mainblock[1].appendChild(listd[i]);
+    lista_scroll.appendChild(listd[i]);
   };
+  mainblock[1].appendChild(lista_scroll);
   
-  
-  maisb.setAttribute('onclick','alll()');
+  /*maisb.setAttribute('onclick','alll()');
   maisb.innerHTML = 'show more';
-  maisb.setAttribute('id','four');
+  maisb.setAttribute('id','four');*/
   mainblock[1].appendChild(listmore);
-  mainblock[1].appendChild(maisb);
+  /*mainblock[1].appendChild(maisb);*/
   local.appendChild(mainblock[1]);
-  if(alll_Active === 528){
+  /*if(alll_Active === 528){
     alll();
-  }
-  console.log('alll' + alll_Active);
+  }*/
   //terceira div classes
   var marca = window.document.createElement('span');
   marca.innerHTML = '>marcações';
@@ -368,7 +364,7 @@ function headandheart() {
   timer = setInterval(mtd.stt, 7000);
 }
 
-    function alll(){
+  /*  function alll(){
       maisb.setAttribute('onclick','restart()');
       maisb.innerHTML = 'close';
       alll_Active = 528;
@@ -402,7 +398,7 @@ function headandheart() {
     maisb.innerHTML = 'show more';
     alll_Active = null;
     window.scrollTo(830, 830);
-  };
+  };*/
   
   
   function class1(){
@@ -1217,7 +1213,7 @@ function touchend(evt) {
        if(tip === 1){
       local.innerText = '';
       listd = [];
-      lista = [];
+      listd = [];
       listi = [];
       listp = [];
       mainblock = [];
@@ -1333,7 +1329,7 @@ function touchend(evt) {
       mainblock = [];
       category = [];
       home1();
-      scrollControl(rdrty,rdrSc);
+      //scrollControl(rdrty,rdrSc);
      console.log('redirect 11 funcionou');
       markank = 0;
       //retorna ao home do sub mylist
@@ -1372,13 +1368,6 @@ function touchend(evt) {
      case 1:
        vl = nS * 171;
        window.scrollTo(vl, vl);
-      break;
-     case 2:
-       let st = 930;
-       st = st + (nS / 3) * 150;
-       console.log(`${st}| test scroll`);
-       window.scrollTo(st, st);
-       //teste de scroll mais evoluído my list
       break;
      case 3:
       let st2 = 1300;
