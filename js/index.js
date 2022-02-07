@@ -26,12 +26,14 @@ var getJSON = function(url, callback) {
   var control_animation;
   var img_carga = 0;
   var start_one = 0;
-  var div_load = window.document.createElement('div');
+  var div_center = window.document.createElement('div');
   var div_loading = window.document.createElement('div');
+  div_center.setAttribute('class','start_load');
    //loading
 async function loading () {
     lugar.style.background="#1c1c1c";
     if (start_one === 0) {
+      let div_load = window.document.createElement('div');
     div_load.setAttribute('class','load_d');
     div_loading.setAttribute('class','loading_d');
     let letters_load = window.document.createElement('p');
@@ -40,20 +42,11 @@ async function loading () {
     
 
     div_load.appendChild(div_loading);
-    local.appendChild(div_load);
-    local.appendChild(letters_load);
+    div_center.appendChild(div_load);
+    div_center.appendChild(letters_load);
+    local.appendChild(div_center)
     }
     div_loading.style.width= `${carga}%`;
-    /*let imgElement = []
-    if(carga >= 50) {
-    for (let i in readingselected) {
-      imgElement[i] = window.document.createElement('img');
-      imgElement[i].setAttribute('src',`./capas/${dados[readingselected[i]][3]}`);
-    }
-    if(imgElement[i].complete && imgElement[i].naturalHeight !== 0) {
-      carga += 5;
-    }
-  }*/
   console.log(start_one);
   ++start_one;
   //control_animation = requestAnimationFrame(loading);
