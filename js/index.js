@@ -811,20 +811,18 @@ function headandheart() {
  let fontlink = window.document.createElement('a');
  let fontspan = window.document.createElement('span');
  let fontp = window.document.createElement('p');
- let Scp = window.document.createElement('div');
- Scp.setAttribute('onclick',`Capa1(${x})`);
- Scp.setAttribute('class','Hello');
+ 
  let tagmain = window.document.createElement('main');
  tagmain.setAttribute('id','sing');
  let obscure = window.document.createElement('div');
  obscure.setAttribute('class', 'transparencia');
  obscure.appendChild(menulc);
 
- local.appendChild(obscure);
- local.style.background=`url(./capas/${dados[x][3]})`;
- local.style.backgroundSize="cover";
- local.style.backgroundRepeat="no-repeat";
- local.style.backgroundAttachment = "fixed";
+ //local.appendChild(obscure);
+ tagmain.style.background=`url(./capas/${dados[x][3]})`;
+ tagmain.style.backgroundSize="cover";
+ tagmain.style.backgroundRepeat="no-repeat";
+ tagmain.style.backgroundAttachment = "fixed";
 
  tagmain.setAttribute('class','titulo mgtop2');
  let divdei = window.document.createElement('div');
@@ -843,7 +841,7 @@ function headandheart() {
  lugarposter.setAttribute('class','imgtam');
  div1.setAttribute('class','imgcenter');
  
- div1.appendChild(Scp);
+ //div1.appendChild(Scp);
  div1.appendChild(lugarposter);
  divdei.appendChild(div1);
  obscure.appendChild(divdei);
@@ -858,7 +856,7 @@ function headandheart() {
  golink.setAttribute('class','nound col');
  let gop = window.document.createElement('p');
 
- let gospan = window.document.createElement('span');
+ //let gospan = window.document.createElement('span');
  let godiv = window.document.createElement('div');
  let tagimg = window.document.createElement('img');
  tagimg.setAttribute('src','./img-conf/literature.png');
@@ -903,7 +901,8 @@ function headandheart() {
  dacategoria(x);
  for(let w in category){
  obscure.appendChild(category[w]);
- //tagmain.appendChild(obscure);
+ tagmain.appendChild(obscure);
+ local.appendChild(tagmain);
 
 
  }
@@ -990,7 +989,7 @@ function headandheart() {
  var maincpx;
  var maind; 
  
- function Capa1(z) {
+ /*function Capa1(z) {
    maincapa = window.document.createElement('img');
    maincpx = window.document.createElement('img');
    
@@ -1015,7 +1014,7 @@ function headandheart() {
    mui.remove();
    doi.remove();
    her.remove();
- }
+ }*/
  //funcao de classe search
  
  function searclass() {
