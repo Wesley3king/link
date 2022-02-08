@@ -730,7 +730,7 @@ function headandheart() {
    cabecalho.setAttribute('id','rst');
    cabecalho.removeAttribute('class','brt')
    let menuint = window.document.createElement('header');
-   menuint.setAttribute('class','center brt');
+   menuint.setAttribute('class','center_sub brt');
    let menud = [];
    
    let menuinti = window.document.createElement('img');
@@ -805,7 +805,6 @@ function headandheart() {
    lugar.style.background="#1c1c1c";
    category = [];
    subhead(lsi,tdsw,vdst);
-   local.appendChild(menulc);
   window.scrollTo(0, 0);
   //fim do menu, inicio da mostra
   
@@ -816,11 +815,17 @@ function headandheart() {
  Scp.setAttribute('onclick',`Capa1(${x})`);
  Scp.setAttribute('class','Hello');
  let tagmain = window.document.createElement('main');
- tagmain.setAttribute('id','neck');
- 
- tagmain.style.background=`url(./capas/${dados[x][3]})`;
- tagmain.style.backgroundSize="100%";
- tagmain.style.backgroundRepeat="no-repeat";
+ tagmain.setAttribute('id','sing');
+ let obscure = window.document.createElement('div');
+ obscure.setAttribute('class', 'transparencia');
+ obscure.appendChild(menulc);
+
+ local.appendChild(obscure);
+ local.style.background=`url(./capas/${dados[x][3]})`;
+ local.style.backgroundSize="cover";
+ local.style.backgroundRepeat="no-repeat";
+ local.style.backgroundAttachment = "fixed";
+
  tagmain.setAttribute('class','titulo mgtop2');
  let divdei = window.document.createElement('div');
  divdei.setAttribute('id','divimg');
@@ -841,8 +846,7 @@ function headandheart() {
  div1.appendChild(Scp);
  div1.appendChild(lugarposter);
  divdei.appendChild(div1);
- tagmain.appendChild(divdei);
- local.appendChild(tagmain);
+ obscure.appendChild(divdei);
  
  fontlink.appendChild(fontspan);
  fontp.appendChild(fontlink);
@@ -882,9 +886,9 @@ function headandheart() {
  alinha_width.setAttribute('class','sub_align');
  alinha_width.appendChild(namem);
  alinha_width.appendChild(golink);
- local.appendChild(alinha_width);
+ obscure.appendChild(alinha_width);
  fontp.setAttribute('class','fontali');
- local.appendChild(fontp);
+ obscure.appendChild(fontp);
   // funcao da sinopse
  var par = window.document.createElement('p');
  var bold = window.document.createElement('strong');
@@ -895,10 +899,13 @@ function headandheart() {
  colortxt();
  sinos.appendChild(par);
  sinos.setAttribute('class','subsin');
- local.appendChild(sinos);
+ obscure.appendChild(sinos);
  dacategoria(x);
  for(let w in category){
- local.appendChild(category[w]);
+ obscure.appendChild(category[w]);
+ //tagmain.appendChild(obscure);
+
+
  }
 }
  //color da sombra do poster

@@ -51,6 +51,14 @@ body{
   margin-top: -68px;
   box-shadow: 0px 4px 4px black;
 }
+.center_sub{
+  background-color: var(--corback);
+  text-align: center;
+  position: relative;
+  width: 100%;
+  margin-top: -68px;
+  box-shadow: 0px 4px 4px black;
+}
 #rst{
   margin-top: 68px;
 }
@@ -227,6 +235,7 @@ margin-top: 10px;
         display: flex;
         flex-wrap: nowrap;
         overflow-x: scroll;
+        overflow-y: hidden;
       }
       .read_scroll::-webkit-scrollbar{
         display: none;
@@ -438,6 +447,19 @@ margin-top: 10px;
 .imgtam:active{
   transform: scale(1.7);
 }
+#sing{
+  position: relative;
+  width: 100%;
+  height: 90vh;
+  margin:auto;
+}
+.transparencia{
+  background-color: rgba(0, 0, 0, 0.568);
+  height: min-content;
+  position: relative;
+  width: 100%;
+  margin-top: 100px;
+}
 #neck{
   width: 348px;
   height:330px;
@@ -622,8 +644,6 @@ margin-top: 10px;
         background-color: rgb(30,30,30);
         width: 330px;
         height: 700px;
-        margin-top:-68px;
-        
       }
       .logo{
         color: red;
