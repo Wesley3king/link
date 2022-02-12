@@ -60,6 +60,7 @@ async function loading () {
 
 var allvar = [[],[],[],[],[],[],[],[],[]];
 var dados = [];
+var iniciar_home = 0;
 function import_json () {
   for (let i in address){
   getJSON(`./dados/${address[i]}.json`, function(err, data) {
@@ -78,6 +79,10 @@ function import_json () {
     }
   });
   carga += 1;
+  if (i == (address.length - 1)) {
+    console.log('passou!');
+    iniciar_home = 1;
+  }
  }
 };
 control_animation= setInterval(loading, 200);
@@ -345,14 +350,16 @@ function home1(){
   alignsearch = null;
 };
 //inicializador
-var init = function () { setTimeout(()=> {
-  if (allvar[0][1] !== undefined){
+var init = function (s=0) {
+  let time = 1000 + s;
+  setTimeout(()=> {
+  if (iniciar_home === 1){
     organizar();
   }else {
     console.log('failed')
-    init();
+    init(s += 1000);
   }
-}, 1000)}
+}, time)}
 init();
 
 //funcao cabecalho
