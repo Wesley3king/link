@@ -353,12 +353,17 @@ function home1(){
 var init = function (s=0) {
   let time = 1000 + s;
   setTimeout(()=> {
-  if (iniciar_home === 1){
+  try {
+     if (iniciar_home === 1){
     organizar();
   }else {
     console.log('failed')
     init(s += 1000);
   }
+} catch (e) {
+    console.log(' try - failed!')
+    init(s += 500);
+}
 }, time)}
 init();
 
