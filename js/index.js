@@ -21,7 +21,7 @@ var getJSON = function(url, callback) {
   };
   xhr.send();
 };
-
+  
   var carga = 0;
   var control_animation;
   var img_carga = 0;
@@ -38,13 +38,20 @@ async function loading () {
     div_loading.setAttribute('class','loading_d');
     let letters_load = window.document.createElement('p');
     letters_load.innerText = 'carregando...';
-    letters_load.setAttribute('class','letras_carga')
+    letters_load.setAttribute('class','letras_carga');
+    let resta = window.document.createElement('div');
+    resta.innerText = 'reload';
+    resta.setAttribute('class','rrel');
+    resta.addEventListener('click', () => {
+      location.reload();
+    });
     
 
     div_load.appendChild(div_loading);
     div_center.appendChild(div_load);
     div_center.appendChild(letters_load);
-    local.appendChild(div_center)
+    div_center.appendChild(resta);
+    local.appendChild(div_center);
     }
     div_loading.style.width= `${carga}%`;
   console.log(start_one);
@@ -325,13 +332,14 @@ function home1(){
   var linkp = [];
   var linkdd = window.document.createElement('nav');
   linkdd.appendChild(par);
-  
-  for(let i = 0;i < 4; i++){
+  var font_prov = [['leitor.net','wonderland','manytoon'],[0,31,58]];
+  for(let i = 0; i < 3; i++){
     linkp.push(window.document.createElement('a'));
     linkp[i].innerHTML = '>';
     linkp[i].setAttribute('class','pvlink');
-    linkp[i].innerHTML += ` ${allvar[6][i]}`;
-    linkp[i].setAttribute('href', allvar[5][i]);
+    linkp[i].innerHTML += ` ${font_prov[0][i]}`;
+    console.log('qqqqqq'+ font_prov[0][i]);
+    linkp[i].setAttribute('href', allvar[4][font_prov[1][i]]);
     linkp[i].setAttribute('target','_blank');
     linkp[i].setAttribute('class','nounder');
     linkp[i].setAttribute('rel','nofollow');
@@ -354,7 +362,7 @@ var init = function (s=0) {
   let time = 1000 + s;
   setTimeout(()=> {
   try {
-     if (iniciar_home === 1){
+     if (iniciar_home === 1 && dados.length !== undefined) {
     organizar();
   }else {
     console.log('failed')

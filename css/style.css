@@ -730,7 +730,15 @@ margin-top: 10px;
           top: 50%;
           left: 50%;
           transform: translate(-50%,-50%);
-
+        }
+        .rrel{
+          width: 200px;
+          height: 40px;
+          background-color: aqua;
+          color: white;
+          margin: 10vh;
+          text-align: center;
+          font: normal normal 1.5em arial,helvetica,sans-serif;
         }
         /*medias 400px*/
     @media (min-width: 450px) {
