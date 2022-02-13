@@ -339,7 +339,7 @@ function home1(){
     linkp[i].setAttribute('class','pvlink');
     linkp[i].innerHTML += ` ${font_prov[0][i]}`;
     console.log('qqqqqq'+ font_prov[0][i]);
-    linkp[i].setAttribute('href', allvar[4][font_prov[1][i]]);
+    linkp[i].setAttribute('href', dados[font_prov[1][i]][4]);
     linkp[i].setAttribute('target','_blank');
     linkp[i].setAttribute('class','nounder');
     linkp[i].setAttribute('rel','nofollow');
