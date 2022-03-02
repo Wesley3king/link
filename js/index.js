@@ -289,20 +289,22 @@ function home1(){
   for(let i = 0; i < 3; i++){
     classd.push(window.document.createElement('div'));
     classd[i].setAttribute('class','ordem');
-    classi.push(window.document.createElement('img'));
-    classi[i].setAttribute('class','categ');
-    classi[i].setAttribute('alt','classes');
+    //classi.push(window.document.createElement('img'));
+    //classi[i].setAttribute('class','categ');
+    //classi[i].setAttribute('alt','classes');
     classp.push(window.document.createElement('p'));
+    classp[i].setAttribute('class','no_margin');
     if(marcation === 0 && i === 0 && markank != 1 && markank != 3){
-      classi[i].setAttribute('src','./img-conf/red-clock.png');
+      //classi[i].setAttribute('src','./img-conf/red-clock.png');
       classp[i].innerHTML = 'my file';
+      classd[i].setAttribute('id','first_activate');
       classd[i].setAttribute('onclick','class1()');
     }else if(marcation === 0 && i === 1 && markank != 1 && markank != 3){
-      classi[i].setAttribute('src','./img-conf/coffee.png');
+     // classi[i].setAttribute('src','./img-conf/coffee.png');
       classp[i].innerHTML = 'specials';
         classd[i].setAttribute('onclick','class2()');
     }else if(marcation === 0 && i === 2 && markank != 1 && markank != 3){
-      classi[i].setAttribute('src','./img-conf/lightgreen-terminal.png');
+      //classi[i].setAttribute('src','./img-conf/lightgreen-terminal.png');
       classp[i].innerHTML = 'finalized';
         classd[i].setAttribute('onclick','class3()');
     }else if(marcation === 1 || markank === 1){
@@ -313,7 +315,7 @@ function home1(){
       classd[2].setAttribute('class','ordemnow');
     }
     
-  classd[i].appendChild(classi[i]);
+  //classd[i].appendChild(classi[i]);
   classd[i].appendChild(classp[i]);
   
   classmaindiv.appendChild(classd[i]);
@@ -324,6 +326,7 @@ function home1(){
   mainblock[2].appendChild(window.document.createElement('hr'));
   mainblock[2].setAttribute('id','eight');
   local.appendChild(mainblock[2]);
+  $('#first_activate').trigger('click');
   //rodape 
   var par = window.document.createElement('p');
   var ll = [];
