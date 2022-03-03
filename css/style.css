@@ -11,6 +11,9 @@
 body{
   margin: 0px;
 }
+body::-webkit-scrollbar{
+  display: none;
+}
 .tamanhoh{
   width:35;
   height: 30px;
