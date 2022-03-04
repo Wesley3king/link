@@ -176,7 +176,7 @@ var classmaindiv = window.document.createElement('section');
      return vlr;
    },
    mud: function () {
-     maindv.style.animation=`trocar2 2s linear 1`;
+     maindv.style.animation=`trocar2 0.5s linear 1`;
      let slc = mtd.rnd();
      mainp.innerText = '';
      mainp.innerText = `${dados[slc][2]}`;
@@ -191,8 +191,8 @@ var classmaindiv = window.document.createElement('section');
      maindv.appendChild(mainp);
    },
    stt: function () {
-     maindv.style.animation=`trocar1 2s linear 1`;
-     setTimeout(mtd.mud, 2000);
+     maindv.style.animation=`trocar1 0.5s linear 1`;
+     setTimeout(mtd.mud, 500);
    }
  }
     var timer = null;
@@ -343,7 +343,7 @@ function home1(){
     linkp[i].innerHTML = '>';
     linkp[i].setAttribute('class','pvlink');
     linkp[i].innerHTML += ` ${font_prov[0][i]}`;
-    console.log('qqqqqq'+ font_prov[0][i]);
+    //console.log('qqqqqq'+ font_prov[0][i]);
     linkp[i].setAttribute('href', dados[font_prov[1][i]][4]);
     linkp[i].setAttribute('target','_blank');
     linkp[i].setAttribute('class','nounder');
@@ -363,7 +363,7 @@ function home1(){
   alignsearch = null;
 };
 //inicializador
-var init = function (s=0) {
+var init = async function (s=0) {
   let time = 1000 + s;
   setTimeout(()=> {
   try {
@@ -422,7 +422,7 @@ function headandheart() {
     }
     cabecalho.appendChild(dr[i]);
   }
-  console.log('localizador1 = ' + localizador)
+  //console.log('localizador1 = ' + localizador)
   if(localizador === 1){
   local.appendChild(cabecalho);
   }
@@ -496,7 +496,7 @@ function headandheart() {
       oned[i].setAttribute('onclick',`subpage(${oneclass[i]}, 123, 1, ${i}, 3)`);
       classdiv.appendChild(oned[i]);
     };
-    classd[0].setAttribute('onclick','eliminar()');
+    //classd[0].setAttribute('onclick','eliminar()');
     classd[0].setAttribute('class','ordemnow');
     marcation = 1;
     markank = 1;
@@ -526,7 +526,7 @@ function headandheart() {
     classdiv.appendChild(senha);
     classdiv.appendChild(senhago);
     classdiv.appendChild(falha);
-    classd[1].setAttribute('onclick','redirect(2)');
+    //classd[1].setAttribute('onclick','redirect(2)');
    
   };
   
@@ -586,11 +586,11 @@ function headandheart() {
    animd[i].setAttribute('onclick',`subpage(${numclass[i]}, 123, 1, ${i}, 3)`);
    classdiv.appendChild(animd[i])
    };
-   classd[2].setAttribute('onclick','redirect(2)');
+   //classd[2].setAttribute('onclick','redirect(2)');
    classd[2].setAttribute('class','ordemnow');
    marcation = 2;
    markank = 3;
-   console.log(`${marcation} | class3 fun`);
+   //console.log(`${marcation} | class3 fun`);
   }
   //funcao lembrete
   var lemb = ['majo to ryouken: estreia dia 21/outubro'];
@@ -606,11 +606,11 @@ function headandheart() {
     for(var z in lemb){
       classdiv.innerHTML += `》notas: <br> >${lemb[z]}<br>`;
       classdiv.setAttribute('class','eletronic');
-      marca2.setAttribute('onclick','redirect(2)');
+      //marca2.setAttribute('onclick','redirect(2)');
     };
  };
   //remover as classes
-  function eliminar(){
+  /*function eliminar(){
     classdiv.innerText = ''
     marcation = 0
     markank = 0
@@ -622,7 +622,7 @@ function headandheart() {
     classd[2].setAttribute('onclick','class3()')
     classd[2].setAttribute('class','ordem')
     marca2.setAttribute('onclick','notas()')
-  }
+  }*/
  
   //funcao de peaquisa
 
@@ -1294,7 +1294,7 @@ function touchend(evt) {
       scrollControl(rdrty,rdrSc);
      //go to home
    }else if(tip === 2){
-     classdiv.innerText = '';
+     /*classdiv.innerText = '';
     marcation = 0;
     markank = 0;
     classdiv.setAttribute('class','linec');
@@ -1304,7 +1304,7 @@ function touchend(evt) {
     classd[1].setAttribute('class','ordem');
     classd[2].setAttribute('onclick','class3()');
     classd[2].setAttribute('class','ordem');
-    marca2.setAttribute('onclick','notas()');
+    marca2.setAttribute('onclick','notas()');*/
     //eliminar
    }else if(tip === 3){
       local.innerText = '';
