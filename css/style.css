@@ -102,21 +102,17 @@ margin-top: 10px;
 @keyframes trocar1 {
   0% {
     opacity: 1;
-    margin-left: 16.1%;
   }
   100% {
     opacity: 0;
-    margin-left: 31.5%;
   }
 }
 @keyframes trocar2 {
   0% {
-    margin-left: 0%;
     opacity: 0;
   }
   100% {
     opacity: 1;
-    margin-left:15.8%;
   }
 }
 .imgr{
@@ -379,6 +375,12 @@ margin-top: 10px;
         background-color: gray;
         color: white;
       }
+      #scrolly{
+        overflow-y: auto;
+      }
+      #scrolly::-webkit-scrollbar{
+        display: none;
+      }
       .allcenter{
         text-align: center;
         margin: auto;
@@ -392,7 +394,7 @@ margin-top: 10px;
         background-color: #ff5353;
       }
       .linec{
-        text-align: center;
+        display: flex;
         overflow-x: auto;
         /*background-color: rgb(15,15,15);*/
       }

@@ -150,6 +150,8 @@ var classmaindiv = window.document.createElement('section');
   var markank = 0;
   var alignsearch;
   var showarea = window.document.createElement('div');
+  showarea.setAttribute('id','scrolly');
+  showarea.style.height=`${window,innerHeight}px`;
   var clone = [];
   var alll_Active = null,cont = 1,num2 = 9,allnum = 0;
   //armazena o cabecalho
@@ -199,7 +201,7 @@ function home1(){
   lugar.style.background="#1c1c1c";
   localizador = 1;
   localizador2 = 3;
-  console.log(document.body.clientWidth);
+  console.log(window.innerWidth);
   category = [];
   local.appendChild(menulc);
   headandheart();
@@ -280,11 +282,11 @@ function home1(){
   var marca = window.document.createElement('span');
   marca.innerHTML = '>marcações';
   marca.setAttribute('class','mm');
-  marca2.innerHTML = 'text';
+  /*marca2.innerHTML = 'text';
   marca2.setAttribute('onclick','notas()');
-  marca2.setAttribute('class','acionatxt');
+  marca2.setAttribute('class','acionatxt');*/
   mainblock[2].appendChild(marca);
-  mainblock[2].appendChild(marca2);
+  //mainblock[2].appendChild(marca2);
   mainblock[2].appendChild(window.document.createElement('hr'));
   for(let i = 0; i < 3; i++){
     classd.push(window.document.createElement('div'));
@@ -326,7 +328,7 @@ function home1(){
   mainblock[2].appendChild(window.document.createElement('hr'));
   mainblock[2].setAttribute('id','eight');
   local.appendChild(mainblock[2]);
-  $('#first_activate').trigger('click');
+  class1();
   //rodape 
   var par = window.document.createElement('p');
   var ll = [];
@@ -639,19 +641,19 @@ function headandheart() {
   let own = window.document.createElement('img');
   let exit = window.document.createElement('img');
   let dexit = window.document.createElement('article');
-  let cat = window.document.createElement('article');
+  /*let cat = window.document.createElement('article');
   let cati = window.document.createElement('img');
   cati.setAttribute('src','./img-conf/iconc.png');
   cati.setAttribute('alt','classes');
-  cati.setAttribute('class','pixelsimg');
+  cati.setAttribute('class','pixelsimg');*/
 
   
  ut.setAttribute('id','sank');
   allask.setAttribute('id','ohmt');
   
   dexit.setAttribute('onclick','redirect(3)');
-  cat.setAttribute('onclick','searclass()');
-  cat.setAttribute('class','inze3');
+  /*cat.setAttribute('onclick','searclass()');
+  cat.setAttribute('class','inze3');*/
   
   exit.setAttribute('src','./img-conf/sair.png');
   exit.setAttribute('width','14px');
@@ -675,8 +677,8 @@ function headandheart() {
    alignsearch.appendChild(dexit);
    alignsearch.appendChild(ut);
    alignsearch.appendChild(bse);
-   cat.appendChild(cati);
-   alignsearch.appendChild(cat);
+   //cat.appendChild(cati);
+   //alignsearch.appendChild(cat);
    allask.appendChild(alignsearch);
    local.appendChild(allask);
    allask.style.background="rgb(47,47,47)";
@@ -715,6 +717,7 @@ function headandheart() {
      if(verifi === 0){
       var ppp = window.document.createElement('p');
       ppp.appendChild(window.document.createTextNode('nothing to show'));
+      ppp.style.color='white'
       showarea.appendChild(ppp);
     }
     
@@ -1455,7 +1458,7 @@ function touchend(evt) {
        //scroll do search
        break
       case 5:
-       let st4 = ((nS / 2) * 260) - 260;
+       let st4 = ((nS / (window.innerWidth / 152)) * 260) - 260;
        if(st4 <= 0){
          st4 = 0
        }
