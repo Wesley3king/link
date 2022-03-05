@@ -166,8 +166,8 @@ var classmaindiv = window.document.createElement('section');
      var maindv = window.document.createElement('div');
      var pdr = window.document.createElement('section');
      pdr.setAttribute('class','onekiss');
-     var maindi = window.document.createElement('div');
-     var mainp = window.document.createElement('h2');
+     //var maindi = window.document.createElement('div');
+     var mainp = window.document.createElement('span');
  var mtd = {
    rnd: function () {
      let vlr;
@@ -176,22 +176,22 @@ var classmaindiv = window.document.createElement('section');
      return vlr;
    },
    mud: function () {
-     maindv.style.animation=`trocar2 0.5s linear 1`;
+     pdr.style.animation=`trocar2 0.5s linear 1`;
      let slc = mtd.rnd();
      mainp.innerText = '';
      mainp.innerText = `${dados[slc][2]}`;
      mainp.setAttribute('class','tituloresponsivo');
      let mainmangaf = caminho2 + dados[slc][3];
-     maindi.style.backgroundImage=`url(./${mainmangaf})`;
-     maindi.setAttribute('class','imgr');
+     pdr.style.backgroundImage=`url(./${mainmangaf})`;
+     //maindi.setAttribute('class','imgr');
      maindv.setAttribute('id','principal');
      maindv.setAttribute('onclick',`subpage(${slc})`);
      
-     maindv.appendChild(maindi);
-     maindv.appendChild(mainp);
+     //maindv.appendChild(maindi);
+maindv.appendChild(mainp);
    },
    stt: function () {
-     maindv.style.animation=`trocar1 0.5s linear 1`;
+     pdr.style.animation=`trocar1 0.5s linear 1`;
      setTimeout(mtd.mud, 500);
    }
  }
