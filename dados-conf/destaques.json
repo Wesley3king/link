@@ -1,0 +1,26 @@
+{
+    "numero1": {
+        "poster": "black-clover.png",
+        "nome": "Black Clover"
+    },
+    "numero2": {
+        "poster": "fairy-tail.png",
+        "nome": "Fairy Tail"
+    },
+    "numero3": {
+        "poster": "kimetsu.png",
+        "nome": "Kimetsu no Yaiba"
+    },
+    "numero4": {
+        "poster": "boku-no-hero.png",
+        "nome": "Boku no Hero"
+    },
+    "numero5": {
+        "poster": "blackClover.png",
+        "nome": "Black Clover"
+    },
+    "numero6": {
+        "poster": "demon-slayer.png",
+        "nome": "Kimetsu no Yaiba"
+    }
+}

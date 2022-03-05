@@ -168,6 +168,9 @@ var classmaindiv = window.document.createElement('section');
      pdr.setAttribute('class','onekiss');
      //var maindi = window.document.createElement('div');
      var mainp = window.document.createElement('span');
+
+     //var que armazena os dados do destaque
+     var magnifico = [];
  var mtd = {
    rnd: function () {
      let vlr;
@@ -193,10 +196,26 @@ maindv.appendChild(mainp);
    stt: function () {
      pdr.style.animation=`trocar1 0.5s linear 1`;
      setTimeout(mtd.mud, 500);
+   },
+   start: ()=>{
+    getJSON(`./dados-conf/destaques.json`, function(err, data) {
+      if (err !== null) {
+        console.log('erro no importador dos destaques' + err);
+      } else {
+        magnifico.push(new Array(data.numero1.nome,data.numero1.poster));
+        magnifico.push(new Array(data.numero2.nome,data.numero2.poster));
+        magnifico.push(new Array(data.numero3.nome,data.numero3.poster));
+        magnifico.push(new Array(data.numero4.nome,data.numero4.poster));
+        magnifico.push(new Array(data.numero5.nome,data.numero5.poster));
+        magnifico.push(new Array(data.numero6.nome,data.numero6.poster));
+
+        console.log(magnifico);
+      }
+    })
    }
  }
     var timer = null;
-
+//mtd.start();
 function home1(){
   lugar.style.background="#1c1c1c";
   localizador = 1;
