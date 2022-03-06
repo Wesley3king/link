@@ -181,9 +181,9 @@ var classmaindiv = window.document.createElement('section');
    mud: function () {
      pdr.style.animation=`trocar2 0.5s linear 1`;
      let slc = mtd.rnd();
-     /*mainp.style.backgroundImage=`url(./front/${magnifico[1][1]})`;
-     mainp.style.backgroundSize='100% 60%';
-     mainp.style.backgroundRepeat='no-repeat';*/
+     mainp.style.backgroundImage=`url(./front/${magnifico[0][1]})`;
+     mainp.style.backgroundSize='100% 100%';
+     mainp.style.backgroundRepeat='no-repeat';
      mainp.innerText = '';
      mainp.innerText = `${dados[slc][2]}`;
      mainp.setAttribute('class','tituloresponsivo');
@@ -218,7 +218,7 @@ maindv.appendChild(mainp);
    }
  }
     var timer = null;
-//mtd.start();
+mtd.start();
 function home1(){
   lugar.style.background="#1c1c1c";
   localizador = 1;
