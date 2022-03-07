@@ -171,6 +171,7 @@ var classmaindiv = window.document.createElement('section');
 
      //var que armazena os dados do destaque
      var magnifico = [];
+     var seguinte = 0;
  var mtd = {
    rnd: function () {
      let vlr;
@@ -181,14 +182,20 @@ var classmaindiv = window.document.createElement('section');
    mud: function () {
      pdr.style.animation=`trocar2 0.5s linear 1`;
      let slc = mtd.rnd();
-     mainp.style.backgroundImage=`url(./front/${magnifico[0][1]})`;
+     mainp.style.backgroundImage=`url(./front/${magnifico[seguinte][1]})`;
+     if (seguinte == 2){
+       seguinte = 0;
+     }else{
+      seguinte++;
+     }
      mainp.style.backgroundSize='100% 100%';
      mainp.style.backgroundRepeat='no-repeat';
-     mainp.innerText = '';
-     mainp.innerText = `${dados[slc][2]}`;
+     8
+     /*mainp.innerText = '';
+     mainp.innerText = `${dados[slc][2]}`;*/
      mainp.setAttribute('class','tituloresponsivo');
      let mainmangaf = caminho2 + dados[slc][3];
-     pdr.style.backgroundImage=`url(./${mainmangaf})`;
+     //pdr.style.backgroundImage=`url(./${mainmangaf})`;
      //maindi.setAttribute('class','imgr');
      maindv.setAttribute('id','principal');
      maindv.setAttribute('onclick',`subpage(${slc})`);
@@ -208,9 +215,9 @@ maindv.appendChild(mainp);
         magnifico.push(new Array(data.numero1.nome,data.numero1.poster));
         magnifico.push(new Array(data.numero2.nome,data.numero2.poster));
         magnifico.push(new Array(data.numero3.nome,data.numero3.poster));
-        magnifico.push(new Array(data.numero4.nome,data.numero4.poster));
+        /*magnifico.push(new Array(data.numero4.nome,data.numero4.poster));
         magnifico.push(new Array(data.numero5.nome,data.numero5.poster));
-        magnifico.push(new Array(data.numero6.nome,data.numero6.poster));
+        magnifico.push(new Array(data.numero6.nome,data.numero6.poster));*/
 
         console.log(magnifico);
       }

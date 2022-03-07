@@ -86,16 +86,19 @@ margin-top: 10px;
  height: 54px;
 }
 .tituloresponsivo{
-  width: 90%;
-  display: inline-block;
   font-size: 26px;
+  
+  display: block;
+  position: absolute;
+ width: 100%;
   padding-top: 230px;
+  height: 1%;
+  margin: auto;
 }
 .onekiss{
   height:auto;
   width: 100%;
   background-repeat: no-repeat;
-      background-attachment: fixed;
       background-position: center center;
       background-size: cover;
   box-shadow: inset 3px -3px 3px rgb(128, 128, 128);
@@ -106,13 +109,15 @@ margin-top: 10px;
       text-shadow: 2px 2px 3px rgb(24, 24, 24);
       font-family: var(--fontShow);
       font-size: 30px;
-      padding: 8px;
+      /* padding: 8px;
       height: 270px;
-      text-align: center;
+      width: 420px;*/
+    height: 220px;
       vertical-align: bottom;
-      margin:auto;
       border-radius: 3px;
       margin-top: 68px;
+      position: relative;
+      width: 100%;
 }
 @keyframes trocar1 {
   0% {
@@ -773,12 +778,12 @@ margin-top: 10px;
      /*.centet{
        position: relative;
      }*/
-     #principal{
+    /* #principal{
       padding: 8px;
       width: 420px;
       height: 220px;
       text-align: left;
-     }
+     }*/
      /*.imgr{
        width: 140px;
        height: 190px;

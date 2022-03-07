@@ -1,26 +1,14 @@
 {
     "numero1": {
-        "poster": "blacktst.png",
+        "poster": "black-clover-logo.png",
         "nome": "Black Clover"
     },
     "numero2": {
-        "poster": "fairy-tail.png",
-        "nome": "Fairy Tail"
+        "poster": "spy-family-logo.png",
+        "nome": "Spy Family"
     },
     "numero3": {
-        "poster": "kimetsu.png",
-        "nome": "Kimetsu no Yaiba"
-    },
-    "numero4": {
-        "poster": "boku-no-hero.png",
-        "nome": "Boku no Hero"
-    },
-    "numero5": {
-        "poster": "blackClover.png",
-        "nome": "Black Clover"
-    },
-    "numero6": {
-        "poster": "demon-slayer.png",
-        "nome": "Kimetsu no Yaiba"
+        "poster": "martial-peak-logo.png",
+        "nome": "Martial Peak"
     }
 }
