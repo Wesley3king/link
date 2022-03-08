@@ -292,9 +292,12 @@ margin-top: 10px;
       .pv{
         font-weight: normal;
         color: white;
+        margin: 0px;
+        padding: 10px;
       }
       .nounder{
         color:#b9b9b9;
+        margin-left: 8px;
       }
       .nounder:active{
         color: #ffff03;
@@ -303,6 +306,8 @@ margin-top: 10px;
         color: white;
         text-align: center;
         font-size: 10px;
+        margin: 0px;
+        padding-bottom: 10px;
       }
       .inazuma{
         display: inline-block;
@@ -439,6 +444,9 @@ margin-top: 10px;
         color: black;
         margin: auto;
         margin-top: 15px;
+      }
+      footer{
+        background-color: black;
       }
       /*page interna*/
 #ec2{
