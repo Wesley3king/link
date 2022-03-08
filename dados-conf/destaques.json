@@ -4,11 +4,16 @@
         "nome": "Black Clover"
     },
     "numero2": {
-        "poster": "spy-family-logo.png",
+        "poster": "spy-family.webp",
         "nome": "Spy Family"
     },
     "numero3": {
-        "poster": "martial-peak-logo.png",
+        "poster": "martial-peak.png",
         "nome": "Martial Peak"
+    },
+    "numero4": {
+        "poster": "the-immortal-swordman.png",
+        "nome": "Immortal Swordsman In The Reverse World"
     }
+
 }
