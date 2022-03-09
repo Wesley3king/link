@@ -1,19 +1,28 @@
 {
     "numero1": {
         "poster": "black-clover-logo.png",
-        "nome": "Black Clover"
+        "nome": "Black Clover",
+        "color": "#c72121"
     },
     "numero2": {
         "poster": "spy-family.webp",
-        "nome": "Spy Family"
+        "nome": "Spy Family",
+        "color": "aqua"
     },
     "numero3": {
         "poster": "martial-peak.png",
-        "nome": "Martial Peak"
+        "nome": "Martial Peak",
+        "color": "#763E19"
     },
     "numero4": {
         "poster": "the-immortal-swordman.png",
-        "nome": "Immortal Swordsman In The Reverse World"
+        "nome": "Immortal Swordsman In The Reverse World",
+        "color": "#42323B"
+    },
+    "numero5": {
+        "poster": "the-beginning.png",
+        "nome": "the Beginning After the End",
+        "color": "#988044"
     }
 
 }

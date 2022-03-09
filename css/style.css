@@ -15,6 +15,8 @@ body{
 }
 body::-webkit-scrollbar{
   display: none;
+  width: 100vw;
+  height: 100vh;
 }
 .tamanhoh{
   width:35;
@@ -85,29 +87,27 @@ margin-top: 10px;
  float: none;
  height: 54px;
 }
-.tituloresponsivo{
+/*.tituloresponsivo{
   font-size: 26px;
   
   display: block;
   position: absolute;
- width: 100%;
+  width: 100%;
   padding-top: 230px;
   height: 1%;
   margin: auto;
-}
+}*/
 .onekiss{
   height:auto;
-  
-  box-shadow: inset 3px -3px 3px rgb(128, 128, 128);
+  /*box-shadow: inset 3px -3px 3px rgb(128, 128, 128);*/
 
 }
 #principal{
-      color: rgb(228,228,228);
+      /*color: rgb(228,228,228);
       text-shadow: 2px 2px 3px rgb(24, 24, 24);
       font-family: var(--fontShow);
-      font-size: 30px;
+      font-size: 30px;*/
       height: 220px;
-      vertical-align: bottom;
       border-radius: 3px;
       margin-top: 68px;
       position: relative;
@@ -138,6 +138,7 @@ margin-top: 10px;
   background-size: 210px 305px;
   background-repeat: no-repeat;
   margin: auto;
+  color: rgb(49, 10, 10);
 }
  .linem{
   display: inline-block;
@@ -494,6 +495,7 @@ margin-top: 10px;
   position: relative;
   background-position: center center;
   margin:auto;
+  
 }
 .transparencia{
   background-color: rgba(0, 0, 0, 0.568);

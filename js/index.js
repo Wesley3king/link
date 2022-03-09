@@ -1,7 +1,7 @@
 //      LINK PROJECT by @KING.
 const lugar = window.document.querySelector('#my_way');
 const local = window.document.querySelector('#pjct');
-const address = ['tsuki-ga-michibiku-isekai-douchuu','kimi-to-boku-no-saigo-no-senjou-aruiwa-sekai-ga-hajimaru-seisen','the-tutorial-tower-of-the-advanced-player','fukushuu-wo-koinegau-saikyou-yuusha-wa-yami-no-chikara-de-senmetsu-musou-suru','black-kanojo','black-clover','apocalyptic-super-system','hataraku-maou-sama','gods-reborn','imamade-ichido-mo-onnaatsukai-sareta-koto-ga-nai-onna-kishi-wo-onnaatsukai-suru-manga','is-there-an-empty-room','a-world-that-i-rule','kage-no-jitsuryokusha-ni-naritakute','koi-ka-mahou-ka-wakaranai','my-girlfriend-is-a-zombie-virus-girlfriend','my-yandere-girlfriend-wont-let-me-rest-in-peace','negai-o-kanaete-moraou-to-akuma-o-shoukan-shitakedo-kawaikattanode-kekkonshimashita-akuma-no-niidzuma','parallel-paradise','rakudai-kenja-no-gakuin-musou-nidome-no-tense-s-rank-cheat-majutsushi-boukenroku','reincarnated-as-an-aristocrat-with-an-appraisal-skill','tensei-kizoku-no-isekai-boukenroku-jichou-wo-shiranai-kamigami-no-shito','strongest-hired-son-in-law','son-in-law-above-them-all','tsumi-to-kai','the-way-to-protect-the-female-lead-s-older-brother','rise-of-the-demon-king','uragirareta-s-rank-boukensha-no-ore-wa-ai-suru-dorei-no-kanojora-to-tomo-ni-dorei-dake-no-harem-guild-wo-tsukuru','tantei-wa-mou-shindeiru','kanojo-mo-kanojo','chainsaw-man','mahouka-koukou-no-rettousei-nyuugaku-hen','i-swear-that-i-love-you','jungle-juice','houkago-no-goumon-shoujo','koibito-wo-netorare-yuusha-party-kara-tsuihou-sa-retakedo-ex-skill-kotei-dameeji-ni-mezamete-muteki-no-sonzai-ni-saa-fukushuu-o-hajimeyou','naze-boku-no-sekai-wo-daremo-oboeteinai-no-ka','my-wife-is-actually-the-emperor','a-pervert-s-daily-life-a-perverts-daily-life','solo-leveling','martial-peak','my-wife-is-a-demon-queen','the-beginning-after-the-end','kaifuku-jutsushi-yarinaoshi','building-owner','giselle-s-blood','i-the-strongest-demon-have-regained-my-youth','mushoku-tensei-isekai-ittara-honki-dasu','ouritsu-mahou-gakuen-no-saikasei-slum-agari-no-saikyou-mahoushi-kizoku-darake-no-gakuen-de-musou-suru','the-second-coming-of-gluttony','tokyo-ghoul','young-boss','wonderful-new-world','my-girlfriend-is-a-dragon','elf-who-likes-to-be-humiliated','i-m-really-not-the-demon-god-s-lackey','hari-dormitory','boarding-diary','prison-lab','two-households','tales-of-demons-and-gods','the-otome-game-s-bad-ending','seeking-the-flying-sword-path','maou-gun-saikyou-no-majutsushi-wa-ningen-datta'];
+const address = ['tsuki-ga-michibiku-isekai-douchuu','kimi-to-boku-no-saigo-no-senjou-aruiwa-sekai-ga-hajimaru-seisen','the-tutorial-tower-of-the-advanced-player','fukushuu-wo-koinegau-saikyou-yuusha-wa-yami-no-chikara-de-senmetsu-musou-suru','black-kanojo','black-clover','apocalyptic-super-system','hataraku-maou-sama','gods-reborn','imamade-ichido-mo-onnaatsukai-sareta-koto-ga-nai-onna-kishi-wo-onnaatsukai-suru-manga','is-there-an-empty-room','a-world-that-i-rule','kage-no-jitsuryokusha-ni-naritakute','koi-ka-mahou-ka-wakaranai','my-girlfriend-is-a-zombie-virus-girlfriend','my-yandere-girlfriend-wont-let-me-rest-in-peace','negai-o-kanaete-moraou-to-akuma-o-shoukan-shitakedo-kawaikattanode-kekkonshimashita-akuma-no-niidzuma','parallel-paradise','rakudai-kenja-no-gakuin-musou-nidome-no-tense-s-rank-cheat-majutsushi-boukenroku','reincarnated-as-an-aristocrat-with-an-appraisal-skill','tensei-kizoku-no-isekai-boukenroku-jichou-wo-shiranai-kamigami-no-shito','strongest-hired-son-in-law','son-in-law-above-them-all','tsumi-to-kai','the-way-to-protect-the-female-lead-s-older-brother','rise-of-the-demon-king','uragirareta-s-rank-boukensha-no-ore-wa-ai-suru-dorei-no-kanojora-to-tomo-ni-dorei-dake-no-harem-guild-wo-tsukuru','tantei-wa-mou-shindeiru','kanojo-mo-kanojo','chainsaw-man','mahouka-koukou-no-rettousei-nyuugaku-hen','i-swear-that-i-love-you','jungle-juice','houkago-no-goumon-shoujo','koibito-wo-netorare-yuusha-party-kara-tsuihou-sa-retakedo-ex-skill-kotei-dameeji-ni-mezamete-muteki-no-sonzai-ni-saa-fukushuu-o-hajimeyou','naze-boku-no-sekai-wo-daremo-oboeteinai-no-ka','my-wife-is-actually-the-emperor','a-pervert-s-daily-life-a-perverts-daily-life','solo-leveling','martial-peak','my-wife-is-a-demon-queen','the-beginning-after-the-end','kaifuku-jutsushi-yarinaoshi','building-owner','giselle-s-blood','i-the-strongest-demon-have-regained-my-youth','mushoku-tensei-isekai-ittara-honki-dasu','ouritsu-mahou-gakuen-no-saikasei-slum-agari-no-saikyou-mahoushi-kizoku-darake-no-gakuen-de-musou-suru','the-second-coming-of-gluttony','tokyo-ghoul','young-boss','wonderful-new-world','my-girlfriend-is-a-dragon','elf-who-likes-to-be-humiliated','i-m-really-not-the-demon-god-s-lackey','hari-dormitory','boarding-diary','prison-lab','two-households','tales-of-demons-and-gods','the-otome-game-s-bad-ending','seeking-the-flying-sword-path','maou-gun-saikyou-no-majutsushi-wa-ningen-datta','spy-family','immortal-swordsman-in-the-reverse-world'];
 
 var readingselected = [32,33,59,34,35,36,40,41,47,3];
 // impotador de json's
@@ -181,13 +181,14 @@ var classmaindiv = window.document.createElement('section');
    },
    mud: function () {
      pdr.style.animation=`trocar2 0.5s linear 1`;
-     let slc = mtd.rnd();
+     //let slc = mtd.rnd();
      maindv.style.backgroundImage=`url(./front/${magnifico[seguinte][1]})`;
-     seguinte == 3 ? seguinte = 0: seguinte++;
+     pdr.style.backgroundColor= magnifico[seguinte][2]
+     seguinte == 4 ? seguinte = 0: seguinte++;
      /*mainp.innerText = '';
      mainp.innerText = `${dados[slc][2]}`;*/
      //mainp.setAttribute('class','tituloresponsivo');
-     let mainmangaf = caminho2 + dados[slc][3];
+     //let mainmangaf = caminho2 + dados[slc][3];
      maindv.setAttribute('id','principal');
      //maindv.setAttribute('onclick',`subpage(${slc})`);
      
@@ -203,12 +204,12 @@ var classmaindiv = window.document.createElement('section');
       if (err !== null) {
         console.log('erro no importador dos destaques' + err);
       } else {
-        magnifico.push(new Array(data.numero1.nome,data.numero1.poster));
-        magnifico.push(new Array(data.numero2.nome,data.numero2.poster));
-        magnifico.push(new Array(data.numero3.nome,data.numero3.poster));
-        magnifico.push(new Array(data.numero4.nome,data.numero4.poster));
-        /*magnifico.push(new Array(data.numero5.nome,data.numero5.poster));
-        magnifico.push(new Array(data.numero6.nome,data.numero6.poster));*/
+        magnifico.push(new Array(data.numero1.nome,data.numero1.poster,data.numero1.color));
+        magnifico.push(new Array(data.numero2.nome,data.numero2.poster,data.numero2.color));
+        magnifico.push(new Array(data.numero3.nome,data.numero3.poster,data.numero3.color));
+        magnifico.push(new Array(data.numero4.nome,data.numero4.poster,data.numero4.color));
+        magnifico.push(new Array(data.numero5.nome,data.numero5.poster,data.numero5.color));
+        /*magnifico.push(new Array(data.numero6.nome,data.numero6.poster));*/
 
         console.log(magnifico);
       }
@@ -383,6 +384,7 @@ function home1(){
   alignsearch = null;
 };
 //inicializador
+var time_start;
 var init = async function (s=0) {
   let time = 1000 + s;
   setTimeout(()=> {
@@ -868,6 +870,8 @@ function headandheart() {
  obscure.appendChild(menulc);
 
  //local.appendChild(obscure);
+ tagmain.style.width='100%';
+ tagmain.style.height='100%'
  tagmain.style.background=`url(./capas/${dados[x][3]})`;
  tagmain.style.backgroundSize="cover";
  tagmain.style.backgroundRepeat="no-repeat";
