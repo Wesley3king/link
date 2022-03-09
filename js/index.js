@@ -183,6 +183,8 @@ var classmaindiv = window.document.createElement('section');
      pdr.style.animation=`trocar2 0.5s linear 1`;
      //let slc = mtd.rnd();
      maindv.style.backgroundImage=`url(./front/${magnifico[seguinte][1]})`;
+     maindv.setAttribute('onclick',`subpage(${magnifico[seguinte][3]})`);
+     console.log(magnifico[seguinte][3]);
      pdr.style.backgroundColor= magnifico[seguinte][2]
      seguinte == 4 ? seguinte = 0: seguinte++;
      /*mainp.innerText = '';
@@ -204,11 +206,11 @@ var classmaindiv = window.document.createElement('section');
       if (err !== null) {
         console.log('erro no importador dos destaques' + err);
       } else {
-        magnifico.push(new Array(data.numero1.nome,data.numero1.poster,data.numero1.color));
-        magnifico.push(new Array(data.numero2.nome,data.numero2.poster,data.numero2.color));
-        magnifico.push(new Array(data.numero3.nome,data.numero3.poster,data.numero3.color));
-        magnifico.push(new Array(data.numero4.nome,data.numero4.poster,data.numero4.color));
-        magnifico.push(new Array(data.numero5.nome,data.numero5.poster,data.numero5.color));
+        magnifico.push(new Array(data.numero1.nome,data.numero1.poster,data.numero1.color,data.numero1.code));
+        magnifico.push(new Array(data.numero2.nome,data.numero2.poster,data.numero2.color,data.numero2.code));
+        magnifico.push(new Array(data.numero3.nome,data.numero3.poster,data.numero3.color,data.numero3.code));
+        magnifico.push(new Array(data.numero4.nome,data.numero4.poster,data.numero4.color,data.numero4.code));
+        magnifico.push(new Array(data.numero5.nome,data.numero5.poster,data.numero5.color,data.numero5.code));
         /*magnifico.push(new Array(data.numero6.nome,data.numero6.poster));*/
 
         console.log(magnifico);
@@ -858,7 +860,6 @@ function headandheart() {
    subhead(lsi,tdsw,vdst);
   window.scrollTo(0, 0);
   //fim do menu, inicio da mostra
-  
  let fontlink = window.document.createElement('a');
  let fontspan = window.document.createElement('span');
  let fontp = window.document.createElement('p');
@@ -870,9 +871,8 @@ function headandheart() {
  obscure.appendChild(menulc);
 
  //local.appendChild(obscure);
- tagmain.style.width='100%';
- tagmain.style.height='100%'
- tagmain.style.background=`url(./capas/${dados[x][3]})`;
+ console.log(tagmain);
+ tagmain.style.backgroundImage=`url(./capas/${dados[x][3]})`;
  tagmain.style.backgroundSize="cover";
  tagmain.style.backgroundRepeat="no-repeat";
  tagmain.style.backgroundAttachment = "fixed";
@@ -920,7 +920,7 @@ function headandheart() {
  tagimg.setAttribute('hight','26px');
  tagimg.setAttribute('class','titulo2');
  godiv.setAttribute('id','three');
- 
+
  gop.appendChild(window.document.createTextNode(' ler agora!'));
 
  godiv.appendChild(tagimg);
@@ -948,17 +948,21 @@ function headandheart() {
  par.appendChild(bold);
  par.appendChild(window.document.createTextNode(dados[x][7]));
  colortxt();
+ 
  sinos.appendChild(par);
  sinos.setAttribute('class','subsin');
  obscure.appendChild(sinos);
  dacategoria(x);
+ 
  for(let w in category){
  obscure.appendChild(category[w]);
+ }
  tagmain.appendChild(obscure);
  local.appendChild(tagmain);
+ console.log( 'fwx t' + tagmain);
 
 
- }
+ 
 }
  //color da sombra do poster
  function colortxt() {
