@@ -119,8 +119,9 @@ function organizar () {
   
   var di2 = [];
    var img2 = [];
-   var caminho2 = './capas/'
-   var capa2 = [null]
+   var caminho2 = './capas/';
+   var caminhoP = './compact-imgs/'
+   var capa2 = [null];
    var at2 = [];
    var at2 = [];
 
@@ -252,7 +253,7 @@ function home1(){
     readingd.push(window.document.createElement('div'));
     readingd[i].setAttribute('class','linem');
     readingi.push(window.document.createElement('div'));
-    let mainmangaf = caminho2 + dados[readingselected[i]][3];
+    let mainmangaf = caminhoP + dados[readingselected[i]][3];
     readingi[i].style.backgroundImage=`url(${mainmangaf})`;
     readingi[i].setAttribute('class','imgclass');
     readingp.push(window.document.createElement('p'));
@@ -279,7 +280,7 @@ function home1(){
     listd.push(window.document.createElement('div'));
     listd[i].setAttribute('class','linem');
     listi.push(window.document.createElement('div'));
-    let mainmangaf = caminho2 + dados[i][3];
+    let mainmangaf = caminhoP + dados[i][3];
     listi[i].style.backgroundImage=`url(./${mainmangaf})`;
     listi[i].setAttribute('class','imgclass');
     listp.push(window.document.createElement('p'));
@@ -508,7 +509,7 @@ function headandheart() {
       oned.push(window.document.createElement('div'));
       oned[i].setAttribute('class','linem');
       onei.push(window.document.createElement('div'));
-      let mainmangaf = caminho2 + dados[oneclass[i]][3];
+      let mainmangaf = caminhoP + dados[oneclass[i]][3];
       onei[i].style.backgroundImage=`url(${mainmangaf})`;
       onei[i].setAttribute('class','imgclass');
       onep.push(window.document.createElement('p'));
@@ -598,7 +599,7 @@ function headandheart() {
    animd.push(window.document.createElement('div'));
    animd[i].setAttribute('class','linem');
    animi.push(window.document.createElement('div'));
-   let mainmangaf = caminho2 + dados[numclass[i]][3];
+   let mainmangaf = caminhoP + dados[numclass[i]][3];
    animi[i].style.backgroundImage=`url(${mainmangaf})`;
    animi[i].setAttribute('class','imgclass');
    animp.push(window.document.createElement('p'));
@@ -752,7 +753,7 @@ function headandheart() {
      par.push(window.document.createElement('p'));
      par[gg].setAttribute('class','csstxt');
      imgg.push(window.document.createElement('div'));
-     res = caminho2 + dados[numlist[gg]][3];
+     res = caminhoP + dados[numlist[gg]][3];
      imgg[gg].style.backgroundImage=`url(${res})`;
      imgg[gg].setAttribute('class','bigimg');
      
@@ -953,10 +954,12 @@ function headandheart() {
  sinos.setAttribute('class','subsin');
  obscure.appendChild(sinos);
  dacategoria(x);
- 
+ let categorias_div = window.document.createElement('div');
+ categorias_div.setAttribute('class','scroll_cat');
  for(let w in category){
- obscure.appendChild(category[w]);
+ categorias_div.appendChild(category[w]);
  }
+ obscure.appendChild(categorias_div);
  tagmain.appendChild(obscure);
  local.appendChild(tagmain);
  console.log( 'fwx t' + tagmain);
@@ -1191,7 +1194,7 @@ function headandheart() {
        resultd.setAttribute('class','linems');
        resultd.setAttribute('onclick',`subpage(${i}, 0, 3, ${++spy}, 5)`);
        let resulti = window.document.createElement('div');
-       let worst = caminho2 + dados[i][3];
+       let worst = caminhoP + dados[i][3];
        resulti.style.backgroundImage=`url(${worst})`
        resulti.setAttribute('class','bigimg');
        let resultp = window.document.createElement('p');

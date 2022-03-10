@@ -56,6 +56,7 @@ body::-webkit-scrollbar{
   position: fixed;
   width: 100%;
   margin-top: -68px;
+  z-index: 1;
   box-shadow: 0px 4px 4px black;
 }
 .center_sub{
@@ -67,7 +68,10 @@ body::-webkit-scrollbar{
   box-shadow: 0px 4px 4px black;
 }
 #rst{
+  width: 100%;
   margin-top: 68px;
+  position: fixed;
+  z-index: 1;
 }
 .brt{
   border-bottom: 0.5px solid rgb(238,238,238);
@@ -495,14 +499,15 @@ margin-top: 10px;
   position: relative;
   background-position: center center;
   margin:auto;
-  width: 100vh;
   width: 100%;
+  height: 100%;
 }
 .transparencia{
   background-color: rgba(0, 0, 0, 0.568);
   height: min-content;
   position: relative;
   width: 100%;
+  height: 100%;
 }
 .kente{
  text-align: center;
@@ -587,9 +592,20 @@ margin-top: 10px;
 }
 .sratetxt{
   margin-top: 0px;
+  white-space: nowrap;
 }
 .fechar{
   animation: desvanecer 0.5s linear 1;
+}
+.scroll_cat{
+  width: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+.scroll_cat::-webkit-scrollbar{
+  display: none;
 }
 @keyframes desvanecer {
   from {
@@ -673,6 +689,7 @@ margin-top: 10px;
         width: 330px;
         height: 100%;
         margin-top: -68px;
+        z-index: 1;
       }
       .sub_maindivmenu{
         position: fixed;
