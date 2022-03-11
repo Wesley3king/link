@@ -540,29 +540,37 @@ margin-top: 10px;
   color: rgb(250,71,255);
 }
 .fontali{
-  margin-top: 60px;
-  margin-left: 20px;
+  font-weight: bold;
+  /*margin-top: 60px;
+  margin-left: 20px;*/
+  max-width: 980px;
+  margin: auto;
+  text-indent: 20px;
 }
 #five{
   margin-top: 155px;
   text-align:center;
 }
 #divimg{
- padding-top: 50px;
+ padding-top: 80px;
 }
 .stars{
   color: white;
   font: var(--fonttit);
-  text-align: center;
+  text-align: justify;
   padding-top: 50px;
+  margin: 0 15px;
 }
 .subsin{
+  margin: auto;
   margin-left: 15px;
   margin-right: 15px;
   text-align: justify;
-  color: #a8a8a8;
+  color: #b4b4b4;
   font: var(--fontsinopse);
+  max-width: 980px;
 }
+
 /*.subst{
   
 }*/
@@ -570,7 +578,7 @@ margin-top: 10px;
   font-family: Helvetica;
   display: inline-block;
   margin-left: 1.7px;
-  padding: 0.5px 0.4px;
+  padding: 1px 3px;
   padding-bottom: 2px;
   height: 14px;
   color: lime;
@@ -872,4 +880,18 @@ margin-top: 10px;
   
 }
 
+}
+@media (min-width: 980px) {
+  .stars{
+    max-width: 980px;
+    margin: auto;
+  }
+  .subsin{
+    max-width: 980px;
+    margin: auto;
+  }
+  .scroll_cat{
+    max-width: 980px;
+    margin: auto;
+  }
 }
