@@ -112,6 +112,7 @@ function organizar () {
     dados.push(sub_data)
     carga += 1;
   }
+  delete allvar;
 }
 //console.log(dados);
   /*var prov;
@@ -303,13 +304,13 @@ function home1(){
     alll();
   }*/
   //terceira div classes
-  var marca = window.document.createElement('span');
+  /*var marca = window.document.createElement('span');
   marca.innerHTML = '>marcações';
   marca.setAttribute('class','mm');
-  /*marca2.innerHTML = 'text';
+  marca2.innerHTML = 'text';
   marca2.setAttribute('onclick','notas()');
   marca2.setAttribute('class','acionatxt');*/
-  mainblock[2].appendChild(marca);
+  //mainblock[2].appendChild(marca);
   //mainblock[2].appendChild(marca2);
   mainblock[2].appendChild(window.document.createElement('hr'));
   for(let i = 0; i < 3; i++){
@@ -904,7 +905,7 @@ function headandheart() {
  fontp.appendChild(fontlink);
  // ancoragem dos sites
  let golink = window.document.createElement('a');
- golink.setAttribute('href', dados[x][4]);
+ golink.setAttribute('href', `malito:${dados[x][4]}`);
  golink.setAttribute('target','_blank');
  golink.setAttribute('rel','nofollow');
  golink.setAttribute('class','nound col');
@@ -1094,7 +1095,7 @@ function headandheart() {
    vouh.setAttribute('class','confml');
    vouh.setAttribute('alt','return to home');
    let vouvd = window.document.createElement('div');
-   vouvd.setAttribute('onclick','search()');
+   vouvd.setAttribute('onclick','redirect(5)');
    vouvd.setAttribute('class','inazuma ct');
    
    let nomedad = window.document.createElement('div');
@@ -1391,7 +1392,7 @@ function touchend(evt) {
       mainblock = [];
       marcation = markank;
       home1();
-      alll();
+      ///alll();
       scrollControl(rdrty,rdrSc);
       console.log('feito 7');
       //reforma do alll

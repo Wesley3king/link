@@ -167,7 +167,7 @@ margin-top: 10px;
       }
       .linem:hover{
         transition-duration: 2.3s;
-        background-color: red;
+        background-color: rgba(212, 46, 46, 0.774);
         /*transform: scale(1.5);*/
       }
        .csstxt{
@@ -560,8 +560,13 @@ margin-top: 10px;
   text-align: justify;
   padding-top: 50px;
   margin: 0 15px;
+
+}
+.sub_align{
+  text-align: center;
 }
 .subsin{
+  /*text-transform: capitalize;*/
   margin: auto;
   margin-left: 15px;
   margin-right: 15px;
@@ -814,22 +819,6 @@ margin-top: 10px;
         }
         /*medias 400px*/
     @media (min-width: 450px) {
-     /*.centet{
-       position: relative;
-     }*/
-    /* #principal{
-      padding: 8px;
-      width: 420px;
-      height: 220px;
-      text-align: left;
-     }*/
-     /*.imgr{
-       width: 140px;
-       height: 190px;
-       background-size: 135px 190px;
-       display: inline-block;
-       margin-bottom: -70px;
-     }*/
      .tituloresponsivo{
        display: block;
        text-align: center;
@@ -876,10 +865,12 @@ margin-top: 10px;
 .stars{
   padding-top: 0px;
 }
-.sub_align{
-  
-}
 
+}
+@media (min-width: 500px) {
+  .stars{
+    text-align: center;
+  }
 }
 @media (min-width: 980px) {
   .stars{
