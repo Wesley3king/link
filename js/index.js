@@ -923,7 +923,7 @@ function headandheart() {
  fontp.appendChild(fontlink);
  // ancoragem dos sites
  let golink = window.document.createElement('a');
- golink.setAttribute('href', `malito:${dados[x][4]}`);
+ golink.setAttribute('href', `${dados[x][4]}`);
  golink.setAttribute('target','_blank');
  golink.setAttribute('rel','nofollow');
  golink.setAttribute('class','nound col');
