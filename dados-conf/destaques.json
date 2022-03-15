@@ -32,6 +32,18 @@
         "nome": "the Beginning After the End",
         "code": 41,
         "color": "#988044"
+    },
+    "numero6": {
+        "poster": "seeking-the-flying.png",
+        "nome": "seeking the flying sword path",
+        "code": 61,
+        "color": "#0C1325"
+    },
+    "numero7": {
+        "poster": "the-second.png",
+        "nome": "the second coming of gluttony",
+        "code": 48,
+        "color": "#1A202D"
     }
 
 }

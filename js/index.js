@@ -1,5 +1,5 @@
 //      LINK PROJECT by @KING.
-const version = 'j 2.0';
+const version = 'j 3.0';
 const lugar = window.document.querySelector('#my_way');
 const local = window.document.querySelector('#pjct');
 const address = ['tsuki-ga-michibiku-isekai-douchuu','kimi-to-boku-no-saigo-no-senjou-aruiwa-sekai-ga-hajimaru-seisen','the-tutorial-tower-of-the-advanced-player','fukushuu-wo-koinegau-saikyou-yuusha-wa-yami-no-chikara-de-senmetsu-musou-suru','black-kanojo','black-clover','apocalyptic-super-system','hataraku-maou-sama','gods-reborn','imamade-ichido-mo-onnaatsukai-sareta-koto-ga-nai-onna-kishi-wo-onnaatsukai-suru-manga','is-there-an-empty-room','a-world-that-i-rule','kage-no-jitsuryokusha-ni-naritakute','koi-ka-mahou-ka-wakaranai','my-girlfriend-is-a-zombie-virus-girlfriend','my-yandere-girlfriend-wont-let-me-rest-in-peace','negai-o-kanaete-moraou-to-akuma-o-shoukan-shitakedo-kawaikattanode-kekkonshimashita-akuma-no-niidzuma','parallel-paradise','rakudai-kenja-no-gakuin-musou-nidome-no-tense-s-rank-cheat-majutsushi-boukenroku','reincarnated-as-an-aristocrat-with-an-appraisal-skill','tensei-kizoku-no-isekai-boukenroku-jichou-wo-shiranai-kamigami-no-shito','strongest-hired-son-in-law','son-in-law-above-them-all','tsumi-to-kai','the-way-to-protect-the-female-lead-s-older-brother','rise-of-the-demon-king','uragirareta-s-rank-boukensha-no-ore-wa-ai-suru-dorei-no-kanojora-to-tomo-ni-dorei-dake-no-harem-guild-wo-tsukuru','tantei-wa-mou-shindeiru','kanojo-mo-kanojo','chainsaw-man','mahouka-koukou-no-rettousei-nyuugaku-hen','i-swear-that-i-love-you','jungle-juice','houkago-no-goumon-shoujo','koibito-wo-netorare-yuusha-party-kara-tsuihou-sa-retakedo-ex-skill-kotei-dameeji-ni-mezamete-muteki-no-sonzai-ni-saa-fukushuu-o-hajimeyou','naze-boku-no-sekai-wo-daremo-oboeteinai-no-ka','my-wife-is-actually-the-emperor','a-pervert-s-daily-life-a-perverts-daily-life','solo-leveling','martial-peak','my-wife-is-a-demon-queen','the-beginning-after-the-end','kaifuku-jutsushi-yarinaoshi','building-owner','giselle-s-blood','i-the-strongest-demon-have-regained-my-youth','mushoku-tensei-isekai-ittara-honki-dasu','ouritsu-mahou-gakuen-no-saikasei-slum-agari-no-saikyou-mahoushi-kizoku-darake-no-gakuen-de-musou-suru','the-second-coming-of-gluttony','tokyo-ghoul','young-boss','wonderful-new-world','my-girlfriend-is-a-dragon','elf-who-likes-to-be-humiliated','i-m-really-not-the-demon-god-s-lackey','hari-dormitory','boarding-diary','prison-lab','two-households','tales-of-demons-and-gods','the-otome-game-s-bad-ending','seeking-the-flying-sword-path','maou-gun-saikyou-no-majutsushi-wa-ningen-datta','spy-family','immortal-swordsman-in-the-reverse-world'];
@@ -211,7 +211,7 @@ var classmaindiv = window.document.createElement('section');
      maindv.setAttribute('onclick',`subpage(${magnifico[seguinte][3]})`);
      console.log(magnifico[seguinte][3]);
      pdr.style.backgroundColor= magnifico[seguinte][2]
-     seguinte == 4 ? seguinte = 0: seguinte++;
+     seguinte == (magnifico.length -1) ? seguinte = 0: seguinte++;
      /*mainp.innerText = '';
      mainp.innerText = `${dados[slc][2]}`;*/
      //mainp.setAttribute('class','tituloresponsivo');
@@ -234,7 +234,10 @@ var classmaindiv = window.document.createElement('section');
         magnifico.push(new Array(data.numero3.nome,data.numero3.poster,data.numero3.color,data.numero3.code));
         magnifico.push(new Array(data.numero4.nome,data.numero4.poster,data.numero4.color,data.numero4.code));
         magnifico.push(new Array(data.numero5.nome,data.numero5.poster,data.numero5.color,data.numero5.code));
-        /*magnifico.push(new Array(data.numero6.nome,data.numero6.poster));*/
+        magnifico.push(new Array(data.numero6.nome,data.numero6.poster,data.numero6.color,data.numero6.code));
+        magnifico.push(new Array(data.numero7.nome,data.numero7.poster,data.numero7.color,data.numero7.code))
+
+        console.log(magnifico)
     })
    }
  }
@@ -748,7 +751,20 @@ function headandheart() {
    num2 = 2;
  showarea.appendChild(window.document.createElement('hr'));
   allask.appendChild(showarea);
-   for(let e = 0; e <dados.length; e++){
+
+  dados.forEach((item, index)=>{
+    let valor = String(window.document.querySelector('#sank').value.toLowerCase());
+    console.log(`${index} / ${item[1]}`);
+    //console.log(item);
+
+     if(item[1].indexOf(valor) != -1){
+       numlist.push(index);
+       clone.push(index);
+       listone.push(item[2]);
+       verifi++;
+     }
+  })
+   /*for(let e = 0; e <dados.length; e++){
      var valor = String(window.document.querySelector('#sank').value.toLowerCase());
      console.log(`${e} / ${dados[e][1]}`)
      if(dados[e][1].indexOf(valor) != -1){
@@ -757,7 +773,7 @@ function headandheart() {
        listone.push(dados[e][2]);
        verifi++;
      }
-   }
+   }*/
      if(verifi === 0){
       var ppp = window.document.createElement('p');
       ppp.appendChild(window.document.createTextNode('nothing to show'));
