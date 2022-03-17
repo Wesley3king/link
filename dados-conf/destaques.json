@@ -44,6 +44,12 @@
         "nome": "the second coming of gluttony",
         "code": 48,
         "color": "#1A202D"
+    },
+    "numero8": {
+        "poster": "tales-of-d.png",
+        "nome": "tales of demons and gods",
+        "code": 59,
+        "color": "#D37D33"
     }
 
 }
