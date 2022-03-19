@@ -1,27 +1,14 @@
 //      LINK PROJECT by @KING.
-const version = 'j 3.1';
+
+control_animation= setInterval(loading, 200);
+
+const version = 'j 4.0';
 const lugar = window.document.querySelector('#my_way');
 const local = window.document.querySelector('#pjct');
 const address = ['tsuki-ga-michibiku-isekai-douchuu','kimi-to-boku-no-saigo-no-senjou-aruiwa-sekai-ga-hajimaru-seisen','the-tutorial-tower-of-the-advanced-player','fukushuu-wo-koinegau-saikyou-yuusha-wa-yami-no-chikara-de-senmetsu-musou-suru','black-kanojo','black-clover','apocalyptic-super-system','hataraku-maou-sama','gods-reborn','imamade-ichido-mo-onnaatsukai-sareta-koto-ga-nai-onna-kishi-wo-onnaatsukai-suru-manga','is-there-an-empty-room','a-world-that-i-rule','kage-no-jitsuryokusha-ni-naritakute','koi-ka-mahou-ka-wakaranai','my-girlfriend-is-a-zombie-virus-girlfriend','my-yandere-girlfriend-wont-let-me-rest-in-peace','negai-o-kanaete-moraou-to-akuma-o-shoukan-shitakedo-kawaikattanode-kekkonshimashita-akuma-no-niidzuma','parallel-paradise','rakudai-kenja-no-gakuin-musou-nidome-no-tense-s-rank-cheat-majutsushi-boukenroku','reincarnated-as-an-aristocrat-with-an-appraisal-skill','tensei-kizoku-no-isekai-boukenroku-jichou-wo-shiranai-kamigami-no-shito','strongest-hired-son-in-law','son-in-law-above-them-all','tsumi-to-kai','the-way-to-protect-the-female-lead-s-older-brother','rise-of-the-demon-king','uragirareta-s-rank-boukensha-no-ore-wa-ai-suru-dorei-no-kanojora-to-tomo-ni-dorei-dake-no-harem-guild-wo-tsukuru','tantei-wa-mou-shindeiru','kanojo-mo-kanojo','chainsaw-man','mahouka-koukou-no-rettousei-nyuugaku-hen','i-swear-that-i-love-you','jungle-juice','houkago-no-goumon-shoujo','koibito-wo-netorare-yuusha-party-kara-tsuihou-sa-retakedo-ex-skill-kotei-dameeji-ni-mezamete-muteki-no-sonzai-ni-saa-fukushuu-o-hajimeyou','naze-boku-no-sekai-wo-daremo-oboeteinai-no-ka','my-wife-is-actually-the-emperor','a-pervert-s-daily-life-a-perverts-daily-life','solo-leveling','martial-peak','my-wife-is-a-demon-queen','the-beginning-after-the-end','kaifuku-jutsushi-yarinaoshi','building-owner','giselle-s-blood','i-the-strongest-demon-have-regained-my-youth','mushoku-tensei-isekai-ittara-honki-dasu','ouritsu-mahou-gakuen-no-saikasei-slum-agari-no-saikyou-mahoushi-kizoku-darake-no-gakuen-de-musou-suru','the-second-coming-of-gluttony','tokyo-ghoul','young-boss','wonderful-new-world','my-girlfriend-is-a-dragon','elf-who-likes-to-be-humiliated','i-m-really-not-the-demon-god-s-lackey','hari-dormitory','boarding-diary','prison-lab','two-households','tales-of-demons-and-gods','the-otome-game-s-bad-ending','seeking-the-flying-sword-path','maou-gun-saikyou-no-majutsushi-wa-ningen-datta','spy-family','immortal-swordsman-in-the-reverse-world'];
 
 var readingselected = [32,33,59,34,35,36,40,41,47,3];
-// impotador de json's
-var getJSON = function(url, callback) {
-  var xhr = new XMLHttpRequest();
-  xhr.open('GET', url, true);
-  xhr.responseType = 'json';
-  xhr.onreadystatechange = function () {
-    //var status = xhr.status;
-    if (xhr.status === 200) {
-      //Callback caso de tudo certo
-      callback(null, xhr.response);
-    } else {
-      //Callback caso de algum erro
-      callback(status, xhr.response);
-    }
-  };
-  xhr.send();
-};
+
   
   var carga = 0;
   var control_animation;
@@ -55,91 +42,56 @@ async function loading () {
     local.appendChild(div_center);
     }
     div_loading.style.width= `${carga}%`;
-  console.log(start_one);
-  ++start_one;
-  //control_animation = requestAnimationFrame(loading);
-    if(carga >= 100) {
-      //cancelAnimationFrame(control_animation);
+    console.log(start_one);
+    ++start_one;
+    if(start_one === 1) {
       clearInterval(control_animation);
       local.innerText = '';
-      home1();
     }
   }
 
 var allvar = [[],[],[],[],[],[],[],[],[]];
 var dados = [];
 var iniciar_home = 0;
-function import_json () {
-  for (let i in address){
-  getJSON(`./dados/${address[i]}.json`, function(err, data) {
-    if (err !== null) {
-      console.log('erro no importador' + err);
-    } else {
-      allvar[0].push(data.shortNAME);
-      allvar[1].push(data.name);
-      allvar[2].push(data.middleNAME);
-      allvar[3].push(data.img);
-      allvar[4].push(data.link);
-      allvar[5].push(data.provLINK);
-      allvar[6].push(data.prov);
-      allvar[7].push(data.sinopse);
-      allvar[8].push(data.cod)
+
+//importador de json fetch
+async function request (endereco) {
+  return fetch(endereco).then(responseStream => {
+    if(responseStream.status === 200) {
+      return responseStream.json();
+    }else{
+      throw Error(`requisition failed!`);
     }
+  }).then(data => data).catch(err => {console.log(err);
+    return 'erro';
   });
-  carga += 1;
-  if (i == (address.length - 1)) {
-    console.log('passou!');
-    iniciar_home = 1;
-  }
- }
-};
-function request() {
-  for (let i in address){
-    $.get(`./dados/${address[i]}.json`,(data)=>{
-      
-        allvar[0].push(data.shortNAME);
-        allvar[1].push(data.name);
-        allvar[2].push(data.middleNAME);
-        allvar[3].push(data.img);
-        allvar[4].push(data.link);
-        allvar[5].push(data.provLINK);
-        allvar[6].push(data.prov);
-        allvar[7].push(data.sinopse);
-        allvar[8].push(data.cod)
-      
-      carga += 1;
-  if (i == (address.length - 1)) {
-    console.log('passou!');
-    iniciar_home = 1;
-  }
-    })
-   }
 }
-control_animation= setInterval(loading, 200);
-request();
-
-function organizar () {
-  for (let i in allvar[8]) {
-    let n = Number(i);
-    let s = allvar[8].indexOf(n);
+async function import_json () {
+  for (let i = 0; i < address.length; ++i) {
+    let data = await request(`/dados/${address[i]}.json`);
+    if (data === 'erro'){
+        console.log(i);
+        --i;
+        console.log(i);
+    }else{
     let sub_data = [];
-    sub_data.push(allvar[0][s]);
-    sub_data.push(allvar[1][s]);
-    sub_data.push(allvar[2][s]);
-    sub_data.push(allvar[3][s]);
-    sub_data.push(allvar[4][s]);
-    sub_data.push(allvar[5][s]);
-    sub_data.push(allvar[6][s]);
-    sub_data.push(allvar[7][s]);
-
-    dados.push(sub_data)
-    carga += 1;
+        sub_data.push(data.shortNAME);
+        sub_data.push(data.name);
+        sub_data.push(data.middleNAME);
+        sub_data.push(data.img);
+        sub_data.push(data.link);
+        sub_data.push(data.provLINK);
+        sub_data.push(data.prov);
+        sub_data.push(data.sinopse);
+        sub_data.push(data.cod);
+        carga += 1;
+    dados.push(sub_data);
+    }
   }
-  delete allvar;
-}
-//console.log(dados);
-  /*var prov;
-  var provname;*/
+  console.log('conluido',dados)
+  iniciar_home = 1;
+};
+import_json();
   
   var di2 = [];
    var img2 = [];
@@ -226,20 +178,20 @@ var classmaindiv = window.document.createElement('section');
      pdr.style.animation=`trocar1 0.5s linear 1`;
      setTimeout(mtd.mud, 500);
    },
-   start: ()=>{
-    $.get(`./dados-conf/destaques.json`,(data)=> {
+   start: async ()=>{
+    let destaques = await request(`./dados-conf/destaques.json`);
       
-        magnifico.push(new Array(data.numero1.nome,data.numero1.poster,data.numero1.color,data.numero1.code));
-        magnifico.push(new Array(data.numero2.nome,data.numero2.poster,data.numero2.color,data.numero2.code));
-        magnifico.push(new Array(data.numero3.nome,data.numero3.poster,data.numero3.color,data.numero3.code));
-        magnifico.push(new Array(data.numero4.nome,data.numero4.poster,data.numero4.color,data.numero4.code));
-        magnifico.push(new Array(data.numero5.nome,data.numero5.poster,data.numero5.color,data.numero5.code));
-        magnifico.push(new Array(data.numero6.nome,data.numero6.poster,data.numero6.color,data.numero6.code));
-        magnifico.push(new Array(data.numero7.nome,data.numero7.poster,data.numero7.color,data.numero7.code));
-        magnifico.push(new Array(data.numero8.nome,data.numero8.poster,data.numero8.color,data.numero8.code));
+        magnifico.push(new Array(destaques.numero1.nome,destaques.numero1.poster,destaques.numero1.color,destaques.numero1.code));
+        magnifico.push(new Array(destaques.numero2.nome,destaques.numero2.poster,destaques.numero2.color,destaques.numero2.code));
+        magnifico.push(new Array(destaques.numero3.nome,destaques.numero3.poster,destaques.numero3.color,destaques.numero3.code));
+        magnifico.push(new Array(destaques.numero4.nome,destaques.numero4.poster,destaques.numero4.color,destaques.numero4.code));
+        magnifico.push(new Array(destaques.numero5.nome,destaques.numero5.poster,destaques.numero5.color,destaques.numero5.code));
+        magnifico.push(new Array(destaques.numero6.nome,destaques.numero6.poster,destaques.numero6.color,destaques.numero6.code));
+        magnifico.push(new Array(destaques.numero7.nome,destaques.numero7.poster,destaques.numero7.color,destaques.numero7.code));
+        magnifico.push(new Array(destaques.numero8.nome,destaques.numero8.poster,destaques.numero8.color,destaques.numero8.code));
 
         console.log(magnifico);
-    })
+    
    }
  }
     var timer = null;
@@ -248,7 +200,7 @@ function home1(){
   lugar.style.background="#1c1c1c";
   localizador = 1;
   localizador2 = 3;
-  console.log(window.innerWidth);
+  //console.log(window.innerWidth);
   category = [];
   local.appendChild(menulc);
   headandheart();
@@ -416,7 +368,7 @@ var init = async function (s=0) {
   setTimeout(()=> {
   try {
      if (iniciar_home === 1 && dados.length !== undefined) {
-    organizar();
+    home1();
   }else {
     console.log('failed')
     init(s += 1000);
