@@ -57,7 +57,11 @@ var iniciar_home = 0;
 //importador de json fetch
 function request (endereco) {
   return fetch(endereco).then(responseStream => {
-    return responseStream.json();
+    if(responseStream.status === 200) {
+      return responseStream.json();
+    }else{
+      throw Error(`requisition failed!`);
+    }
   }).then(data => data).catch(err => {console.log(err);
     return 'erro';
   });
