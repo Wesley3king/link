@@ -64,7 +64,7 @@ function request (endereco) {
 }
 async function import_json () {
   for (let i = 0; i < address.length; ++i) {
-    let data = await request(`/dados/${address[i]}.json`);
+    let data = await request(`./dados/${address[i]}.json`);
     if (data === 'erro'){
         console.log(i);
         //--i;
