@@ -55,13 +55,9 @@ var dados = [];
 var iniciar_home = 0;
 
 //importador de json fetch
-async function request (endereco) {
+function request (endereco) {
   return fetch(endereco).then(responseStream => {
-    if(responseStream.status === 200) {
-      return responseStream.json();
-    }else{
-      throw Error(`requisition failed!`);
-    }
+    return responseStream.json();
   }).then(data => data).catch(err => {console.log(err);
     return 'erro';
   });
@@ -71,7 +67,7 @@ async function import_json () {
     let data = await request(`/dados/${address[i]}.json`);
     if (data === 'erro'){
         console.log(i);
-        --i;
+        //--i;
         console.log(i);
     }else{
     let sub_data = [];

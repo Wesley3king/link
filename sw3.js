@@ -1,5 +1,5 @@
 // Criando um nome para o arquivo de cache
-const staticCache = "version4.0";
+const staticCache = "version tst 4.0";
 
 // Lista de arquivos que devem ser cacheados
 const files = [
