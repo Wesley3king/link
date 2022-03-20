@@ -1,7 +1,4 @@
 //      LINK PROJECT by @KING.
-
-control_animation= setInterval(loading, 200);
-
 const version = 'j 4.0';
 const lugar = window.document.querySelector('#my_way');
 const local = window.document.querySelector('#pjct');
@@ -18,39 +15,16 @@ var readingselected = [32,33,59,34,35,36,40,41,47,3];
   var div_loading = window.document.createElement('div');
   div_center.setAttribute('class','start_load');
    //loading
-async function loading () {
-    lugar.style.background="#1c1c1c";
-    if (start_one === 0) {
-      let div_load = window.document.createElement('div');
-    div_load.setAttribute('class','load_d');
-    div_loading.setAttribute('class','loading_d');
-    let letters_load = window.document.createElement('p');
-    letters_load.innerText = 'carregando...';
-    letters_load.setAttribute('class','letras_carga');
-    let resta = window.document.createElement('div');
-    resta.innerText = 'reload';
-    resta.setAttribute('class','rrel');
-    resta.addEventListener('click', () => {
-      location.reload();
-    });
-    
+async function no_loading () {
+    let gira = window.document.querySelector('#loading_is_low');
+    let reload_bt = window.document.querySelector('.rrel');
+    let all_load = window.document.querySelector('#loader_div_animation');
 
-    div_load.appendChild(div_loading);
-    div_center.appendChild(div_load);
-    div_center.appendChild(letters_load);
-    div_center.appendChild(resta);
-    local.appendChild(div_center);
-    }
-    div_loading.style.width= `${carga}%`;
-    console.log(start_one);
-    ++start_one;
-    if(start_one === 1) {
-      clearInterval(control_animation);
-      local.innerText = '';
-    }
+    gira.style.animation= 'none';
+    reload_bt.style.display='none';
+    all_load.style.display='none';
   }
-
-var allvar = [[],[],[],[],[],[],[],[],[]];
+//var allvar = [[],[],[],[],[],[],[],[],[]];
 var dados = [];
 var iniciar_home = 0;
 
@@ -71,7 +45,7 @@ async function import_json () {
     let data = await request(`./dados/${address[i]}.json`);
     if (data === 'erro'){
         console.log(i);
-        //--i;
+        --i;
         console.log(i);
     }else{
     let sub_data = [];
@@ -368,6 +342,7 @@ var init = async function (s=0) {
   setTimeout(()=> {
   try {
      if (iniciar_home === 1 && dados.length !== undefined) {
+    no_loading();
     home1();
   }else {
     console.log('failed')

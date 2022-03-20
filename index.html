@@ -20,9 +20,18 @@
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body id="my_way">
+    <div id="loader_div_animation">
+        <div id="loading_is_low"></div>
+        <div class="rrel" onclick="recarregar()">reload</div>
+    </div>
     <main id="pjct">
 
     </main>
+    <script>
+        function recarregar(){
+            location.reload();
+        }
+    </script>
     <script src="./js/index.js"></script>
     <script src="./js/register.js"></script>
 
