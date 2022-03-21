@@ -1,5 +1,5 @@
 //      LINK PROJECT by @KING.
-const version = 'j 4.0';
+const version = 'j 4.1';
 const lugar = window.document.querySelector('#my_way');
 const local = window.document.querySelector('#pjct');
 const address = ['tsuki-ga-michibiku-isekai-douchuu','kimi-to-boku-no-saigo-no-senjou-aruiwa-sekai-ga-hajimaru-seisen','the-tutorial-tower-of-the-advanced-player','fukushuu-wo-koinegau-saikyou-yuusha-wa-yami-no-chikara-de-senmetsu-musou-suru','black-kanojo','black-clover','apocalyptic-super-system','hataraku-maou-sama','gods-reborn','imamade-ichido-mo-onnaatsukai-sareta-koto-ga-nai-onna-kishi-wo-onnaatsukai-suru-manga','is-there-an-empty-room','a-world-that-i-rule','kage-no-jitsuryokusha-ni-naritakute','koi-ka-mahou-ka-wakaranai','my-girlfriend-is-a-zombie-virus-girlfriend','my-yandere-girlfriend-wont-let-me-rest-in-peace','negai-o-kanaete-moraou-to-akuma-o-shoukan-shitakedo-kawaikattanode-kekkonshimashita-akuma-no-niidzuma','parallel-paradise','rakudai-kenja-no-gakuin-musou-nidome-no-tense-s-rank-cheat-majutsushi-boukenroku','reincarnated-as-an-aristocrat-with-an-appraisal-skill','tensei-kizoku-no-isekai-boukenroku-jichou-wo-shiranai-kamigami-no-shito','strongest-hired-son-in-law','son-in-law-above-them-all','tsumi-to-kai','the-way-to-protect-the-female-lead-s-older-brother','rise-of-the-demon-king','uragirareta-s-rank-boukensha-no-ore-wa-ai-suru-dorei-no-kanojora-to-tomo-ni-dorei-dake-no-harem-guild-wo-tsukuru','tantei-wa-mou-shindeiru','kanojo-mo-kanojo','chainsaw-man','mahouka-koukou-no-rettousei-nyuugaku-hen','i-swear-that-i-love-you','jungle-juice','houkago-no-goumon-shoujo','koibito-wo-netorare-yuusha-party-kara-tsuihou-sa-retakedo-ex-skill-kotei-dameeji-ni-mezamete-muteki-no-sonzai-ni-saa-fukushuu-o-hajimeyou','naze-boku-no-sekai-wo-daremo-oboeteinai-no-ka','my-wife-is-actually-the-emperor','a-pervert-s-daily-life-a-perverts-daily-life','solo-leveling','martial-peak','my-wife-is-a-demon-queen','the-beginning-after-the-end','kaifuku-jutsushi-yarinaoshi','building-owner','giselle-s-blood','i-the-strongest-demon-have-regained-my-youth','mushoku-tensei-isekai-ittara-honki-dasu','ouritsu-mahou-gakuen-no-saikasei-slum-agari-no-saikyou-mahoushi-kizoku-darake-no-gakuen-de-musou-suru','the-second-coming-of-gluttony','tokyo-ghoul','young-boss','wonderful-new-world','my-girlfriend-is-a-dragon','elf-who-likes-to-be-humiliated','i-m-really-not-the-demon-god-s-lackey','hari-dormitory','boarding-diary','prison-lab','two-households','tales-of-demons-and-gods','the-otome-game-s-bad-ending','seeking-the-flying-sword-path','maou-gun-saikyou-no-majutsushi-wa-ningen-datta','spy-family','immortal-swordsman-in-the-reverse-world'];
@@ -23,6 +23,12 @@ async function no_loading () {
     gira.style.animation= 'none';
     reload_bt.style.display='none';
     all_load.style.display='none';
+  }
+
+  const mutate = window.document.querySelector('#show_no_animate');
+  async function loading_atualization (v) {
+    carga += v;
+    mutate.innerText=`${carga.toFixed(1)}%`;
   }
 //var allvar = [[],[],[],[],[],[],[],[],[]];
 var dados = [];
@@ -48,7 +54,7 @@ async function import_json () {
         --i;
         console.log(i);
     }else{
-    let sub_data = [];
+      let sub_data = [];
         sub_data.push(data.shortNAME);
         sub_data.push(data.name);
         sub_data.push(data.middleNAME);
@@ -58,11 +64,11 @@ async function import_json () {
         sub_data.push(data.prov);
         sub_data.push(data.sinopse);
         sub_data.push(data.cod);
-        carga += 1;
-    dados.push(sub_data);
+        loading_atualization(1.53);
+        dados.push(sub_data);
     }
   }
-  console.log('conluido',dados)
+  console.log('conluido\n',dados)
   iniciar_home = 1;
 };
 import_json();
