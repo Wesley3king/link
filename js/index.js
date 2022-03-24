@@ -1,5 +1,5 @@
 //      LINK PROJECT by @KING.
-const version = 'j 4.1';
+const version = 'j experimental 4.2';
 const lugar = window.document.querySelector('#my_way');
 const local = window.document.querySelector('#pjct');
 const address = ['tsuki-ga-michibiku-isekai-douchuu','kimi-to-boku-no-saigo-no-senjou-aruiwa-sekai-ga-hajimaru-seisen','the-tutorial-tower-of-the-advanced-player','fukushuu-wo-koinegau-saikyou-yuusha-wa-yami-no-chikara-de-senmetsu-musou-suru','black-kanojo','black-clover','apocalyptic-super-system','hataraku-maou-sama','gods-reborn','imamade-ichido-mo-onnaatsukai-sareta-koto-ga-nai-onna-kishi-wo-onnaatsukai-suru-manga','is-there-an-empty-room','a-world-that-i-rule','kage-no-jitsuryokusha-ni-naritakute','koi-ka-mahou-ka-wakaranai','my-girlfriend-is-a-zombie-virus-girlfriend','my-yandere-girlfriend-wont-let-me-rest-in-peace','negai-o-kanaete-moraou-to-akuma-o-shoukan-shitakedo-kawaikattanode-kekkonshimashita-akuma-no-niidzuma','parallel-paradise','rakudai-kenja-no-gakuin-musou-nidome-no-tense-s-rank-cheat-majutsushi-boukenroku','reincarnated-as-an-aristocrat-with-an-appraisal-skill','tensei-kizoku-no-isekai-boukenroku-jichou-wo-shiranai-kamigami-no-shito','strongest-hired-son-in-law','son-in-law-above-them-all','tsumi-to-kai','the-way-to-protect-the-female-lead-s-older-brother','rise-of-the-demon-king','uragirareta-s-rank-boukensha-no-ore-wa-ai-suru-dorei-no-kanojora-to-tomo-ni-dorei-dake-no-harem-guild-wo-tsukuru','tantei-wa-mou-shindeiru','kanojo-mo-kanojo','chainsaw-man','mahouka-koukou-no-rettousei-nyuugaku-hen','i-swear-that-i-love-you','jungle-juice','houkago-no-goumon-shoujo','koibito-wo-netorare-yuusha-party-kara-tsuihou-sa-retakedo-ex-skill-kotei-dameeji-ni-mezamete-muteki-no-sonzai-ni-saa-fukushuu-o-hajimeyou','naze-boku-no-sekai-wo-daremo-oboeteinai-no-ka','my-wife-is-actually-the-emperor','a-pervert-s-daily-life-a-perverts-daily-life','solo-leveling','martial-peak','my-wife-is-a-demon-queen','the-beginning-after-the-end','kaifuku-jutsushi-yarinaoshi','building-owner','giselle-s-blood','i-the-strongest-demon-have-regained-my-youth','mushoku-tensei-isekai-ittara-honki-dasu','ouritsu-mahou-gakuen-no-saikasei-slum-agari-no-saikyou-mahoushi-kizoku-darake-no-gakuen-de-musou-suru','the-second-coming-of-gluttony','tokyo-ghoul','young-boss','wonderful-new-world','my-girlfriend-is-a-dragon','elf-who-likes-to-be-humiliated','i-m-really-not-the-demon-god-s-lackey','hari-dormitory','boarding-diary','prison-lab','two-households','tales-of-demons-and-gods','the-otome-game-s-bad-ending','seeking-the-flying-sword-path','maou-gun-saikyou-no-majutsushi-wa-ningen-datta','spy-family','immortal-swordsman-in-the-reverse-world'];
@@ -30,7 +30,7 @@ async function no_loading () {
     carga += v;
     mutate.innerText=`${carga.toFixed(1)}%`;
   }
-//var allvar = [[],[],[],[],[],[],[],[],[]];
+var allvar = [];
 var dados = [];
 var iniciar_home = 0;
 
@@ -46,7 +46,7 @@ function request (endereco) {
     return 'erro';
   });
 }
-async function import_json () {
+/*async function import_json () {
   for (let i = 0; i < address.length; ++i) {
     let data = await request(`./dados/${address[i]}.json`);
     if (data === 'erro'){
@@ -70,6 +70,50 @@ async function import_json () {
   }
   console.log('conluido\n',dados)
   iniciar_home = 1;
+};*/
+async function organizar (response, indice, tempo=0) {
+  let time = 0 + tempo;
+  setTimeout(()=>{
+    if (dados[(indice-1)] !== undefined || response.shortNAME === 'tsuki ga') {
+        let sub_data = [];
+        sub_data.push(response.shortNAME);
+        sub_data.push(response.name);
+        sub_data.push(response.middleNAME);
+        sub_data.push(response.img);
+        sub_data.push(response.link);
+        sub_data.push(response.provLINK);
+        sub_data.push(response.prov);
+        sub_data.push(response.sinopse);
+        sub_data.push(response.cod);
+        loading_atualization(0.769230769);
+        dados.push(sub_data);
+      console.log(dados);
+        if (response.shortNAME === 'Immortal...') {
+          console.log("finalizado!")
+          no_loading();
+          home1()
+        }
+    }else{
+      organizar(response, indice, 400);
+    }
+  }, time)
+  
+}
+
+async function wait (url,indice) {
+  let data = await request(url);
+    if (data === 'erro'){
+        console.log(indice);
+    }else{
+      organizar(data, indice);
+    }
+  console.log('requisições conluidas!')
+}
+function import_json () {
+  for (let i = 0; i < address.length; ++i) {
+    wait(`./dados/${address[i]}.json`, i);
+    loading_atualization(0.769230769);
+  }
 };
 import_json();
   
@@ -342,7 +386,7 @@ function home1(){
   alignsearch = null;
 };
 //inicializador
-var time_start;
+/*var time_start;
 var init = async function (s=0) {
   let time = 1000 + s;
   setTimeout(()=> {
@@ -359,7 +403,7 @@ var init = async function (s=0) {
     init(s += 500);
 }
 }, time)}
-init();
+init();*/
 
 //funcao cabecalho
 function headandheart() {
