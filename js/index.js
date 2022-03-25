@@ -105,6 +105,7 @@ async function wait (url,indice) {
     if (data === 'erro'){
         console.log(indice);
     }else{
+      loading_atualization(0.769230769);
       organizar(data, indice);
     }
   console.log('requisições conluidas!')
@@ -112,7 +113,6 @@ async function wait (url,indice) {
 function import_json () {
   for (let i = 0; i < address.length; ++i) {
     wait(`./dados/${address[i]}.json`, i);
-    loading_atualization(0.769230769);
   }
 };
 import_json();
@@ -690,6 +690,7 @@ function headandheart() {
   own.setAttribute('alt','search.png');
   bse.setAttribute('onclick','mostar(1)');
   ut.setAttribute('type','search');
+  ut.setAttribute('placeholder', 'digite o nome do mangá');
   ut.setAttribute('onkeypress','mostar(1)');
   bse.setAttribute('class','inze2');
   dexit.setAttribute('class','inze3');
