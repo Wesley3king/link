@@ -90,8 +90,8 @@ async function organizar (response, indice, tempo=0) {
       console.log(dados);
         if (response.shortNAME === 'Immortal...') {
           console.log("finalizado!")
-          no_loading();
-          home1()
+          //no_loading();
+          //home1()
         }
     }else{
       organizar(response, indice, 400);
@@ -385,25 +385,6 @@ function home1(){
   local.appendChild(rr);
   alignsearch = null;
 };
-//inicializador
-/*var time_start;
-var init = async function (s=0) {
-  let time = 1000 + s;
-  setTimeout(()=> {
-  try {
-     if (iniciar_home === 1 && dados.length !== undefined) {
-    no_loading();
-    home1();
-  }else {
-    console.log('failed')
-    init(s += 1000);
-  }
-} catch (e) {
-    console.log(' try - failed!')
-    init(s += 500);
-}
-}, time)}
-init();*/
 
 //funcao cabecalho
 function headandheart() {
