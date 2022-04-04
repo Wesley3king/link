@@ -1,5 +1,5 @@
 //      LINK PROJECT by @KING.
-const version = 'j experimental 4.2';
+const version = 'f 1.0';
 const lugar = window.document.querySelector('#my_way');
 const local = window.document.querySelector('#pjct');
 const address = ['tsuki-ga-michibiku-isekai-douchuu','kimi-to-boku-no-saigo-no-senjou-aruiwa-sekai-ga-hajimaru-seisen','the-tutorial-tower-of-the-advanced-player','fukushuu-wo-koinegau-saikyou-yuusha-wa-yami-no-chikara-de-senmetsu-musou-suru','black-kanojo','black-clover','apocalyptic-super-system','hataraku-maou-sama','gods-reborn','imamade-ichido-mo-onnaatsukai-sareta-koto-ga-nai-onna-kishi-wo-onnaatsukai-suru-manga','is-there-an-empty-room','a-world-that-i-rule','kage-no-jitsuryokusha-ni-naritakute','koi-ka-mahou-ka-wakaranai','my-girlfriend-is-a-zombie-virus-girlfriend','my-yandere-girlfriend-wont-let-me-rest-in-peace','negai-o-kanaete-moraou-to-akuma-o-shoukan-shitakedo-kawaikattanode-kekkonshimashita-akuma-no-niidzuma','parallel-paradise','rakudai-kenja-no-gakuin-musou-nidome-no-tense-s-rank-cheat-majutsushi-boukenroku','reincarnated-as-an-aristocrat-with-an-appraisal-skill','tensei-kizoku-no-isekai-boukenroku-jichou-wo-shiranai-kamigami-no-shito','strongest-hired-son-in-law','son-in-law-above-them-all','tsumi-to-kai','the-way-to-protect-the-female-lead-s-older-brother','rise-of-the-demon-king','uragirareta-s-rank-boukensha-no-ore-wa-ai-suru-dorei-no-kanojora-to-tomo-ni-dorei-dake-no-harem-guild-wo-tsukuru','tantei-wa-mou-shindeiru','kanojo-mo-kanojo','chainsaw-man','mahouka-koukou-no-rettousei-nyuugaku-hen','i-swear-that-i-love-you','jungle-juice','houkago-no-goumon-shoujo','koibito-wo-netorare-yuusha-party-kara-tsuihou-sa-retakedo-ex-skill-kotei-dameeji-ni-mezamete-muteki-no-sonzai-ni-saa-fukushuu-o-hajimeyou','naze-boku-no-sekai-wo-daremo-oboeteinai-no-ka','my-wife-is-actually-the-emperor','a-pervert-s-daily-life-a-perverts-daily-life','solo-leveling','martial-peak','my-wife-is-a-demon-queen','the-beginning-after-the-end','kaifuku-jutsushi-yarinaoshi','building-owner','giselle-s-blood','i-the-strongest-demon-have-regained-my-youth','mushoku-tensei-isekai-ittara-honki-dasu','ouritsu-mahou-gakuen-no-saikasei-slum-agari-no-saikyou-mahoushi-kizoku-darake-no-gakuen-de-musou-suru','the-second-coming-of-gluttony','tokyo-ghoul','young-boss','wonderful-new-world','my-girlfriend-is-a-dragon','elf-who-likes-to-be-humiliated','i-m-really-not-the-demon-god-s-lackey','hari-dormitory','boarding-diary','prison-lab','two-households','tales-of-demons-and-gods','the-otome-game-s-bad-ending','seeking-the-flying-sword-path','maou-gun-saikyou-no-majutsushi-wa-ningen-datta','spy-family','immortal-swordsman-in-the-reverse-world'];
@@ -87,11 +87,11 @@ async function organizar (response, indice, tempo=0) {
         sub_data.push(response.cod);
         loading_atualization(0.769230769);
         dados.push(sub_data);
-      console.log(dados);
+      //console.log(dados);
         if (response.shortNAME === 'Immortal...') {
           console.log("finalizado!")
-          //no_loading();
-          //home1()
+          no_loading();
+          home1()
         }
     }else{
       organizar(response, indice, 400);
@@ -108,7 +108,7 @@ async function wait (url,indice) {
       loading_atualization(0.769230769);
       organizar(data, indice);
     }
-  console.log('requisições conluidas!')
+  //console.log('requisições conluidas!')
 }
 function import_json () {
   for (let i = 0; i < address.length; ++i) {
@@ -185,18 +185,12 @@ var classmaindiv = window.document.createElement('section');
      //let slc = mtd.rnd();
      maindv.style.backgroundImage=`url(./front/${magnifico[seguinte][1]})`;
      maindv.setAttribute('onclick',`subpage(${magnifico[seguinte][3]})`);
-     console.log(magnifico[seguinte][3]);
+     //console.log(magnifico[seguinte][3]);
      pdr.style.backgroundColor= magnifico[seguinte][2]
      seguinte == (magnifico.length -1) ? seguinte = 0: seguinte++;
-     /*mainp.innerText = '';
-     mainp.innerText = `${dados[slc][2]}`;*/
-     //mainp.setAttribute('class','tituloresponsivo');
-     //let mainmangaf = caminho2 + dados[slc][3];
+    
      maindv.setAttribute('id','principal');
-     //maindv.setAttribute('onclick',`subpage(${slc})`);
      
-     //maindv.appendChild(maindi);
-//maindv.appendChild(mainp);
    },
    stt:() => {
      pdr.style.animation=`trocar1 0.5s linear 1`;
@@ -396,14 +390,10 @@ function headandheart() {
   }
   let menuimage1 = window.document.createElement('img');
   let menuimage2 = window.document.createElement('img');
-  let titulo = window.document.createElement('h1');
-  titulo.setAttribute('class','titulo1')
-  let bspan = window.document.createElement('span');
-  
-  bspan.setAttribute('class','menor')
-  titulo.appendChild(window.document.createTextNode('.link'));
-  bspan.appendChild(window.document.createTextNode('mangás'));
-  titulo.appendChild(bspan);
+  let titulo = window.document.createElement('div');
+  titulo.style.backgroundImage="url('./mangaKa.png')";
+
+  titulo.setAttribute('class','img_titulo');
   
   menuimage1.setAttribute('src','./img-conf/menuwhite.png');
   menuimage1.setAttribute('alt','menuchoose');
@@ -788,12 +778,9 @@ function headandheart() {
    menuinti.setAttribute('class','tamj');
    menuinti.setAttribute('onclick',`menu(999, ${ls}, ${wSv}, ${tpp})`);
    let menuinti2 = window.document.createElement('img');
-   let menuinth = window.document.createElement('h1');
-   menuinth.setAttribute('class','titulo1');
-   let spa = window.document.createElement('span');
-   menuinth.innerHTML = '.link';
-   spa.innerHTML = 'mangás';
-   spa.setAttribute('class','menor');
+   let menuinth = window.document.createElement('div');
+   menuinth.style.backgroundImage="url(./mangaKa.png)";
+   menuinth.setAttribute('class','img_titulo');
    menuinti2.setAttribute('src','./img-conf/doble-arrow.png');
   menuinti2.setAttribute('alt','return');
   //redirecionamento/ voltar
@@ -820,7 +807,6 @@ function headandheart() {
      menud.push(window.document.createElement('div'));
      if(i == 1){
       menud[i].setAttribute('class','cabeca margen2');
-       menuinth.appendChild(spa);
        menud[i].appendChild(menuinth);
        menuint.appendChild(menud[i]);
     }else if(i > 0){
@@ -1230,15 +1216,10 @@ function headandheart() {
    menul.setAttribute('class','maindivmenu');
   }
   //emblema e voltar
-  let ctxt = '.link';
-  let mang = 'mangás';
-  let read = window.document.createElement('span');
-  read.appendChild(window.document.createTextNode(mang));
-  let pronto = window.document.createElement('h1');
-  pronto.innerHTML = ctxt;
-  read.setAttribute('class','sublogo');
-  pronto.appendChild(read);
-  pronto.setAttribute('class','logo inazuma');
+
+  let pronto = window.document.createElement('div');
+  pronto.setAttribute('class','img_titulo');
+  pronto.style.backgroundImage="url(./mangaKa.png)";
   menul.appendChild(pronto);
   //for de opcoes
      for(let i in selct[0]){
