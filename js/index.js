@@ -15,21 +15,29 @@ var readingselected = [32,33,59,34,35,36,40,41,47,3];
   var div_loading = window.document.createElement('div');
   div_center.setAttribute('class','start_load');
    //loading
+
+   var baa = window.document.querySelector('#loading_is_low');
 async function no_loading () {
-    let gira = window.document.querySelector('#loading_is_low');
     let reload_bt = window.document.querySelector('.rrel');
     let all_load = window.document.querySelector('#loader_div_animation');
 
-    gira.style.animation= 'none';
+    baa.style.animation= 'none';
     reload_bt.style.display='none';
     all_load.style.display='none';
   }
 
-  const mutate = window.document.querySelector('#show_no_animate');
+  const mutate = window.document.querySelector('#show_no_animate'), barra = document.getElementById("charge");
+
+    let wd = window.innerWidth;
+    let p8 = (wd/10)*2;
+    baa.style.width = `${wd-p8}px`;
+    var valc = (wd-p8)/100;
   async function loading_atualization (v) {
     carga += v;
+    barra.style.width = `${carga*valc}px`;
     mutate.innerText=`${carga.toFixed(1)}%`;
   }
+
 var allvar = [];
 var dados = [];
 var iniciar_home = 0;
@@ -120,7 +128,7 @@ import_json();
   var di2 = [];
    var img2 = [];
    var caminho2 = './capas/';
-   var caminhoP = './compact-imgs/'
+   var caminhoP = './compact-imgs/';
    var capa2 = [null];
    var at2 = [];
    var at2 = [];

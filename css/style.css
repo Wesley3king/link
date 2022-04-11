@@ -27,12 +27,16 @@ body{
 }
 #charge{
   height: 2px;
-  background-color: red;
+  width: 0;
+  background-color: crimson;
 }
 #show_no_animate{
+  width: max-content;
   margin: auto;
   color: white;
-  margin-bottom: -10px;
+  background-color: #1313133a;
+  margin: auto;
+  margin-top: -10px;
 }
 body::-webkit-scrollbar{
   display: none;

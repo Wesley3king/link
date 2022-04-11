@@ -6,9 +6,7 @@ const files = [
   './',
   './index.html',
   './css/style.css',
-  './js/index.js'/*,
-  './assets/styles/main.min.css',
-  './assets/scripts/main.min.js',*/
+  './js/index.js'
 ];
 
 // Faz cache dos arquivos ao instalar
